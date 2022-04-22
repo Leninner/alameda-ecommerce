@@ -8,10 +8,13 @@ import {
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { FaTiktok } from 'react-icons/fa'
 import { BsFacebook } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export const Header = () => {
   const SIZE = '20'
+  const state = useSelector(state => state)
+
+  console.log(state)
 
   return (
     <HeaderContainer>

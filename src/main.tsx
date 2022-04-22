@@ -1,9 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot } from 'react-dom/client'
 import App from './routes/App'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import { rootReducer } from './reducers'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+const AppStore = createStore(rootReducer)
+
+createRoot(document.getElementById('root')!).render(
+  <Provider store={AppStore}>
     <App />
-  </React.StrictMode>
+  </Provider>
 )
