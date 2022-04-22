@@ -1,6 +1,18 @@
-import { HeaderContainer, NavigationOptions, SocialOptions } from './styles'
+import {
+  HeaderContainer,
+  NavigationOptions,
+  SocialOptions,
+  SocialButtons,
+  ShopCart,
+} from './styles'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { FaTiktok } from 'react-icons/fa'
+import { BsFacebook } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
+  const SIZE = '20'
+
   return (
     <HeaderContainer>
       <NavigationOptions>
@@ -23,15 +35,20 @@ export const Header = () => {
       <h1>Alameda</h1>
 
       <SocialOptions>
-        <div>
+        <SocialButtons>
           {/* TODO: Add image - Instagram */}
-          <img src="" alt="s" />
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+            <BsFacebook size={SIZE} />
+          </a>
           {/* TODO: Add image - TikTok */}
-          <img src="" alt="s" />
-        </div>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer">
+            <FaTiktok size={SIZE} />
+          </a>
+        </SocialButtons>
 
-        {/* TODO: Add image - Cart */}
-        <img src="" alt="s" />
+        <ShopCart>
+          <AiOutlineShoppingCart size={SIZE} />
+        </ShopCart>
       </SocialOptions>
     </HeaderContainer>
   )

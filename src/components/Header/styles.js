@@ -49,7 +49,30 @@ export const SocialOptions = styled.section`
   display: flex;
   justify-content: flex-end;
 
-  img {
-    margin-left: 20px;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+`
+
+export const SocialButtons = styled.div`
+  width: 83px;
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    flex: 1;
+  }
+`
+
+export const ShopCart = styled.div`
+  width: 53px;
+  display: flex;
+  justify-content: flex-end;
+
+  svg {
+    path {
+      fill: #525252;
+    }
   }
 `
