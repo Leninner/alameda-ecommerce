@@ -1,9 +1,9 @@
-import { Header } from '../../components/Header'
+import { CategoriesFilter } from '../../components/CategoriesFilter'
 
 export const Home = () => {
   return (
     <div>
-      <Header />
+      <CategoriesFilter />
     </div>
   )
 }
