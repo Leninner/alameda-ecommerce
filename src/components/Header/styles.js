@@ -10,6 +10,7 @@ export const HeaderContainer = styled.header`
   padding: 4vw;
   line-height: 1;
   font-size: 16px;
+  position: relative;
 
   h1 {
     flex: 1;
@@ -62,6 +63,10 @@ export const SocialButtons = styled.div`
 
   a {
     flex: 1;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `
 
