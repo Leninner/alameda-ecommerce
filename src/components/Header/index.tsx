@@ -4,8 +4,10 @@ import {
   SocialOptions,
   SocialButtons,
   ShopCart,
+  Box,
 } from './styles'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
+import { HiOutlineMenuAlt4 } from 'react-icons/hi'
 import { FaTiktok } from 'react-icons/fa'
 import { BsFacebook } from 'react-icons/bs'
 import { MenuMobile } from '../MenuMobile'
@@ -17,7 +19,7 @@ export const Header = () => {
   const state = useSelector(state => state)
   const [isOpen, setIsOpen] = useState(false)
 
-  console.log(state)
+  const handleOpen = () => setIsOpen(!isOpen)
 
   return (
     <HeaderContainer>
@@ -39,7 +41,13 @@ export const Header = () => {
           </ul>
         </NavigationOptions>
       ) : (
-        <>{isOpen ? <MenuMobile /> : null}</>
+        <>
+          <Box>
+            {!isOpen && <HiOutlineMenuAlt4 size={35} onClick={handleOpen} />}
+          </Box>
+
+          {isOpen ? <MenuMobile handleOpen={handleOpen} /> : null}
+        </>
       )}
 
       <h1>Alameda</h1>

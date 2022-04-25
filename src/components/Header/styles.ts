@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  max-height: 155px;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,5 +77,14 @@ export const ShopCart = styled.div`
     path {
       fill: #525252;
     }
+  }
+`
+
+export const Box = styled.div`
+  flex: 1;
+  text-align: left;
+
+  svg {
+    cursor: pointer;
   }
 `
