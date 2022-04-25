@@ -12,7 +12,18 @@ export const CardProduct = ({ name, images }) => {
   const handleMouseLeave = () => setIsHover(false)
 
   return (
-    <CardProductContainer>
+    <CardProductContainer
+      as={motion.div}
+      initial={{ opacity: 0, y: -50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        type: 'spring',
+        stiffness: 500,
+        damping: 150,
+        duration: 0.5,
+      }}
+      viewport={{ once: true }}
+    >
       <CardProductImgContainer
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
