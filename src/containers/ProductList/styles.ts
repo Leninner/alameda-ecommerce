@@ -6,4 +6,5 @@ export const ProductListContainer = styled.section`
   grid-column-gap: 2vw;
   grid-row-gap: 4vw;
   padding: 0;
+  place-items: center;
 `

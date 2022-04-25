@@ -1,5 +1,5 @@
 import { ProductListContainer } from './styles'
-import { CardProduct } from '../CardProduct'
+import { CardProduct } from '../../components/CardProduct'
 import { useSelector } from 'react-redux'
 import { shopListInterface } from '../../interfaces'
 

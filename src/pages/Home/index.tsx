@@ -1,5 +1,5 @@
 import { CategoriesFilter } from '../../components/CategoriesFilter'
-import { ProductList } from '../../components/ProductList'
+import { ProductList } from '../../containers/ProductList'
 
 export const Home = () => {
   return (

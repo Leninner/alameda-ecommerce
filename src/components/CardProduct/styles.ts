@@ -5,10 +5,17 @@ export const CardProductContainer = styled.section`
   width: 290px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 95%;
+    height: 785px;
+  }
 `
 
 export const CardProductImgContainer = styled.div`
-  height: 386px;
+  min-height: 386px;
+  height: 100%;
   width: 100%;
   position: relative;
 
