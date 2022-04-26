@@ -20,10 +20,5 @@ export const LookBookContainer = styled.div`
       width: 100%;
       height: 100%;
     }
-
-    .slick-prev:before,
-    .slick-next:before {
-      color: rgb(58, 57, 57) !important;
-    }
   }
 `
