@@ -12,6 +12,7 @@ import { FaTiktok } from 'react-icons/fa'
 import { BsFacebook } from 'react-icons/bs'
 import { MenuMobile } from '../MenuMobile'
 import { useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 
 export const Header = () => {
@@ -27,16 +28,16 @@ export const Header = () => {
         <NavigationOptions>
           <ul>
             <li>
-              <a href="/">Tienda</a>
+              <NavLink to="/">Tienda</NavLink>
             </li>
             <li>
-              <a href="/">Catálogo</a>
+              <NavLink to="/catalogo">Catálogo</NavLink>
             </li>
             <li>
-              <a href="/">Acerca de</a>
+              <NavLink to="/about">Acerca de</NavLink>
             </li>
             <li>
-              <a href="/">Contacto</a>
+              <NavLink to="/contact">Contacto</NavLink>
             </li>
           </ul>
         </NavigationOptions>
@@ -54,11 +55,9 @@ export const Header = () => {
 
       <SocialOptions>
         <SocialButtons>
-          {/* TODO: Add image - Instagram */}
           <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
             <BsFacebook size={SIZE} />
           </a>
-          {/* TODO: Add image - TikTok */}
           <a href="https://www.tiktok.com/" target="_blank" rel="noreferrer">
             <FaTiktok size={SIZE} />
           </a>

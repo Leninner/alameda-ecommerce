@@ -41,6 +41,11 @@ export const NavigationOptions = styled.nav`
       }
     }
   }
+
+  .active {
+    padding-bottom: 2px;
+    border-bottom: 1px solid #525252;
+  }
 `
 
 export const SocialOptions = styled.section`
