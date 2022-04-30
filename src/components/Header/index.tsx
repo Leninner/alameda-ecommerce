@@ -14,6 +14,7 @@ import { MenuMobile } from '../MenuMobile'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export const Header = () => {
   const SIZE = '20'
@@ -51,7 +52,9 @@ export const Header = () => {
         </>
       )}
 
-      <h1>Alameda</h1>
+      <h1>
+        <Link to="/">Alameda</Link>
+      </h1>
 
       <SocialOptions>
         <SocialButtons>

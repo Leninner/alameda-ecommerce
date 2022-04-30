@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -17,6 +17,11 @@ export const HeaderContainer = styled.header`
     font-weight: 500;
     letter-spacing: 0em;
     line-height: 1.4em;
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
   }
 `
 
