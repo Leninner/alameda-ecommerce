@@ -41,6 +41,16 @@ export const FooterContainer = styled.footer`
       color: #000;
     }
   }
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding-top: 4vmax;
+    padding-bottom: 4vmax;
+
+    span {
+      margin: 0 1.5rem;
+    }
+  }
 `
 
 export const SubcribeForm = styled.form`

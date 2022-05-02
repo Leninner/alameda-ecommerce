@@ -56,7 +56,7 @@ export const MenuMobileContainer = styled.section`
   }
 
   section {
-    position: absolute;
+    position: fixed;
     bottom: 40px;
     width: 100%;
     display: flex;

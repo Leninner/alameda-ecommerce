@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaTiktok } from 'react-icons/fa'
 import { BsFacebook } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 export const MenuMobile = ({ handleOpen }) => {
   return (
@@ -21,22 +22,23 @@ export const MenuMobile = ({ handleOpen }) => {
         exit={{
           y: 300,
         }}
+        onClick={handleOpen}
       >
-        <a href="/">
+        <Link to="/">
           <span>Tienda</span>
-        </a>
+        </Link>
 
-        <a href="/">
+        <Link to="/lookbook">
           <span>Catálogo</span>
-        </a>
+        </Link>
 
-        <a href="/">
+        <Link to="/about">
           <span>Acerca de</span>
-        </a>
+        </Link>
 
-        <a href="/">
+        <Link to="/contact">
           <span>Contacto</span>
-        </a>
+        </Link>
       </motion.div>
 
       <motion.section

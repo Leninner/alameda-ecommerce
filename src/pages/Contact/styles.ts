@@ -3,6 +3,10 @@ import styled from 'styled-components'
 export const ContactContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const ContactIntro = styled.div`

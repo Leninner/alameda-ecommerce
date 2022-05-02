@@ -7,6 +7,25 @@ export const AboutContainer = styled.div`
   section {
     width: 50%;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    section {
+      width: 95%;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      h2 {
+        font-size: calc(1.2 * 1rem);
+        margin: 2rem 0;
+      }
+    }
+  }
 `
 
 export const FirstPart = styled.section`
