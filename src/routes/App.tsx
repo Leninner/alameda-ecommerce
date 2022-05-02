@@ -4,6 +4,7 @@ import { Home } from '../pages/Home'
 import { Layout } from '../containers/Layout'
 import { LookBook } from '../pages/LookBook'
 import { About } from '../pages/About'
+import { Contact } from '../pages/Contact'
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/lookbook" element={<LookBook />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </Layout>
     </BrowserRouter>

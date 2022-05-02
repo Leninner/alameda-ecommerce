@@ -8,18 +8,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.8",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-slick": "^0.23.8",
     "framer-motion": "^6.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-hook-form": "^7.30.0",
     "react-icons": "^4.3.1",
     "react-redux": "^8.0.0",
     "react-router-dom": "^6.3.0",
     "react-slick": "^0.29.0",
     "redux": "^4.1.2",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

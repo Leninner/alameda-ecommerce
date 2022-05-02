@@ -5,3 +5,11 @@ export interface shopListInterface {
   image: string
   images: string[]
 }
+
+export type Inputs = {
+  name: string
+  lastName: string
+  email: string
+  message: string
+  asunto: string
+}
