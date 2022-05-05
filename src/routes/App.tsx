@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Routes, Route, HashRouter } from 'react-router-dom'
 import { GlobalStyles } from '../styles/GlobalStyles'
 import { Home } from '../pages/Home'
 import { Layout } from '../containers/Layout'
@@ -8,7 +8,8 @@ import { Contact } from '../pages/Contact'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
+      {/* Hash router */}
       <GlobalStyles />
       <Layout>
         <Routes>
@@ -19,7 +20,7 @@ function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
