@@ -1,23 +1,33 @@
 import { CategoriesFilterContainer, CategoriesList } from './styles'
+import { useDispatch } from 'react-redux'
 
 export const CategoriesFilter = () => {
+  const dispatch = useDispatch()
+
+  const searchByCategory = (category: string) => {
+    return dispatch({
+      type: 'SEARCH_BY_CATEGORY',
+      payload: category,
+    })
+  }
+
   return (
     <CategoriesFilterContainer>
       <CategoriesList>
-        <li>
-          <a href="#">Oferta</a>
-        </li>
+        <li onClick={() => searchByCategory('all')}>Todo</li>
 
         <span>|</span>
 
-        <li>
-          <a href="#">Pantalones</a>
-        </li>
+        <li onClick={() => searchByCategory('offer')}>Oferta</li>
 
         <span>|</span>
 
-        <li>
-          <a href="#">Prendas superiores</a>
+        <li onClick={() => searchByCategory('pants')}>Pantalones</li>
+
+        <span>|</span>
+
+        <li onClick={() => searchByCategory('topCloths')}>
+          Prendas superiores
         </li>
       </CategoriesList>
     </CategoriesFilterContainer>

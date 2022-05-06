@@ -31,11 +31,8 @@ export const CategoriesList = styled.ul`
 
   li {
     margin: 0 1.5vw;
-
-    a {
-      text-decoration: none;
-      color: #525252;
-    }
+    cursor: pointer;
+    color: #525252;
   }
 
   span {

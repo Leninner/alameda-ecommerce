@@ -11,14 +11,6 @@ export const CardProduct = ({ name, images }) => {
   const handleMouseEnter = () => setIsHover(true)
   const handleMouseLeave = () => setIsHover(false)
 
-  const preload = (image, url: string) => {
-    fetch(url)
-      .then(request => request.blob())
-      .then(() => {
-        image.src = url
-      })
-  }
-
   return (
     <CardProductContainer
       as={motion.div}
@@ -37,19 +29,12 @@ export const CardProduct = ({ name, images }) => {
         onMouseLeave={handleMouseLeave}
       >
         {!isHover ? (
-          <img
-            src={images[0]}
-            alt={name}
-            onLoad={() => preload(this, images[0])}
-          />
+          <img src={images[0]} alt={name} />
         ) : (
           <>
             <motion.img
               src={images.length > 1 ? images[1] : images[0]}
               alt={name}
-              onLoad={() =>
-                preload(this, images.length > 1 ? images[1] : images[0])
-              }
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 0.5 } }}
             />

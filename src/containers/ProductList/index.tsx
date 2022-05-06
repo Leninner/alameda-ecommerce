@@ -6,11 +6,11 @@ import { shopListInterface } from '../../interfaces'
 export const ProductList = () => {
   const { shopList }: any = useSelector(state => state)
 
-  console.log(shopList.products)
+  console.log(shopList.filteredProducts)
 
   return (
     <ProductListContainer>
-      {shopList.products.map((product: shopListInterface) => (
+      {shopList.filteredProducts.map((product: shopListInterface) => (
         <CardProduct key={product.id} {...product} />
       ))}
     </ProductListContainer>
