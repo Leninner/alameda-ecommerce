@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components'
 
 export const HandBook = styled.div`
   padding-top: 3.3vmax;
@@ -9,9 +8,8 @@ export const HandBook = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fafafa;
   margin-top: 3.3vmax;
-  
+
   h1 {
     cursor: pointer;
     text-decoration-line: underline;
