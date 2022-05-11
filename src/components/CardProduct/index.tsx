@@ -5,11 +5,14 @@ import {
 } from './styles'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { ProductInfoModal } from '../../containers/ProductInfoModal'
 
-export const CardProduct = ({ name, images }) => {
+export const CardProduct = ({ name, images, currentProductIndex }) => {
   const [isHover, setIsHover] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const handleMouseEnter = () => setIsHover(true)
   const handleMouseLeave = () => setIsHover(false)
+  const handleOpen = () => setIsOpen(true)
 
   return (
     <CardProductContainer
@@ -47,12 +50,20 @@ export const CardProduct = ({ name, images }) => {
                   ease: 'easeIn',
                 },
               }}
+              onClick={handleOpen}
             >
               Vista Rápida
             </motion.button>
           </>
         )}
       </CardProductImgContainer>
+
+      {isOpen && (
+        <ProductInfoModal
+          setIsOpen={setIsOpen}
+          currentProductIndex={currentProductIndex}
+        />
+      )}
 
       <CardProductInfo>
         <h3>{name}</h3>

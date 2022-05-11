@@ -10,9 +10,15 @@ export const ProductList = () => {
 
   return (
     <ProductListContainer>
-      {shopList.filteredProducts.map((product: shopListInterface) => (
-        <CardProduct key={product.id} {...product} />
-      ))}
+      {shopList.filteredProducts.map(
+        (product: shopListInterface, currentProductIndex: number) => (
+          <CardProduct
+            key={product.id}
+            {...product}
+            currentProductIndex={currentProductIndex}
+          />
+        )
+      )}
     </ProductListContainer>
   )
 }
