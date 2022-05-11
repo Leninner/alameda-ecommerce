@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
   width: 100%;
@@ -82,11 +82,19 @@ export const ShopCart = styled.div`
   width: 53px;
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  cursor: pointer;
 
   svg {
     path {
       fill: #525252;
     }
+  }
+
+  span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
   }
 `
 

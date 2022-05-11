@@ -16,9 +16,20 @@ import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+interface StateProps {
+  cart: {
+    cart: Product[]
+  }
+}
+
+interface Product {}
+
 export const Header = () => {
   const SIZE = '20'
-  const state = useSelector(state => state)
+  const { cart } = useSelector((state: StateProps) => state.cart)
+
+  console.log(cart)
+
   const [isOpen, setIsOpen] = useState(false)
 
   const handleOpen = () => setIsOpen(!isOpen)
@@ -68,6 +79,7 @@ export const Header = () => {
 
         <ShopCart>
           <AiOutlineShoppingCart size={SIZE} />
+          <span>{cart.length}</span>
         </ShopCart>
       </SocialOptions>
     </HeaderContainer>
