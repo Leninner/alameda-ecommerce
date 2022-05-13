@@ -10,6 +10,15 @@ export const ProductInfoModal = ({
   const modalRoot: any = document.getElementById('modal-root')
   const state = useSelector((state: any) => state)
 
+  // Efecto para evitar el scroll en el body al abrir un modal
+  useEffect(() => {
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden'
+
+    return () => {
+      document.getElementsByTagName('body')[0].style.overflow = 'auto'
+    }
+  })
+
   const [currentIndex, setCurrentIndex] = useState(currentProductIndex)
   const [currentProduct, setCurrentProduct] = useState(
     state.shopList.filteredProducts[currentIndex]
