@@ -19,3 +19,34 @@ export const ProductInfoModalContainer = styled.div`
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 `
+
+export const CloseButton = styled.span`
+  position: fixed;
+  top: 0px;
+  right: 25px;
+  font-size: 25px;
+  cursor: pointer;
+`
+
+export const PreviousButton = styled.span`
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+`
+
+export const NextButton = styled.span`
+  position: fixed;
+  top: 50%;
+  right: 25px;
+  font-size: 25px;
+  cursor: pointer;
+`
+
+export const ModalBody = styled.div`
+  width: 70%;
+  display: flex;
+  min-height: 100vh;
+  margin-top: 20vh;
+`

@@ -1,7 +1,15 @@
 import { createPortal } from 'react-dom'
 import { useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
-import { ProductInfoModalContainer } from './styles'
+import {
+  ProductInfoModalContainer,
+  CloseButton,
+  PreviousButton,
+  NextButton,
+  ModalBody,
+} from './styles'
+import { ImageDescription } from '../../components/ImageDescription'
+import { ProductDescription } from '../../components/ProductDescription'
 
 export const ProductInfoModal = ({
   setIsOpen: setIsOpenModal,
@@ -41,26 +49,26 @@ export const ProductInfoModal = ({
   }, [currentIndex])
 
   console.log({
-    state: state.shopList.filteredProducts,
-    currentProductIndex,
     currentProduct,
   })
 
   return createPortal(
     <ProductInfoModalContainer>
-      <div className="modal">
-        <span className="close" onClick={() => setIsOpenModal(false)}>
-          X
-        </span>
+      <CloseButton onClick={() => setIsOpenModal(false)}>X</CloseButton>
 
-        <div className="modal-header">
-          <h2>Product Info</h2>
-          <p>{currentProduct.name}</p>
-        </div>
+      <ModalBody>
+        <ImageDescription
+          imageOne={currentProduct.images[0]}
+          imageTwo={currentProduct.images[1]}
+        />
+        <ProductDescription
+          name={currentProduct.name}
+          price={currentProduct.price}
+        />
+      </ModalBody>
 
-        <span onClick={handlePreviousProduct}> {'<'} </span>
-        <span onClick={handleNextProduct}> {'>'} </span>
-      </div>
+      <PreviousButton onClick={handlePreviousProduct}> {'<'} </PreviousButton>
+      <NextButton onClick={handleNextProduct}> {'>'} </NextButton>
     </ProductInfoModalContainer>,
     modalRoot
   )

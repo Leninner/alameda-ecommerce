@@ -17,6 +17,7 @@ function App() {
           <Route path="/lookbook" element={<LookBook />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<h1>Cart</h1>} />
           <Route path="*" element={<Home />} />
         </Routes>
       </Layout>
