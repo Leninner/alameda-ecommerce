@@ -39,7 +39,7 @@ export const Campos = styled.div`
   select {
     width: 320px;
     height: 69px;
-    padding: 0 10px;
+    padding: 0 20px;
     border: 1px solid grey;
     outline: none;
 
@@ -55,7 +55,7 @@ export const Campos = styled.div`
   input {
     width: 150px;
     height: 69px;
-    padding: 0 10px;
+    padding: 0 20px;
     border: 1px solid grey;
     outline: none;
   }
@@ -80,6 +80,13 @@ export const Campos = styled.div`
     font-size: 1rem;
     line-height: normal;
     padding: 1.2em 2.004em;
+    background-color: #a6a6a6;
+    color: white;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #8c8c8c;
+    }
   }
 
   a {

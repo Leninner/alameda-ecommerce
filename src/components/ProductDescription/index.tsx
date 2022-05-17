@@ -32,7 +32,7 @@ export const ProductDescription = ({ name, price }) => {
 
         <label htmlFor="quantity">
           <span>Cantidad:</span>
-          <input type="number" name="" id="quantity" />
+          <input type="number" name="" id="quantity" value={1} />
         </label>
 
         <button type="submit">Añadir al Carrito</button>
