@@ -47,6 +47,6 @@ export const NextButton = styled.span`
 export const ModalBody = styled.div`
   width: 70%;
   display: flex;
-  min-height: 100vh;
   margin-top: 20vh;
+  min-height: 100vh;
 `
