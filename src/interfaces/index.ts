@@ -1,4 +1,4 @@
-export interface shopListInterface {
+export interface productInterface {
   id: number
   name: string
   price: number
@@ -12,4 +12,11 @@ export type Inputs = {
   email: string
   message: string
   asunto: string
+}
+
+export interface stateInterface {
+  cart: productInterface[]
+  shopList: {
+    filteredProducts: productInterface[]
+  }
 }

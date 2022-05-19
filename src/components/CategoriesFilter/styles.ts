@@ -38,4 +38,8 @@ export const CategoriesList = styled.ul`
   span {
     opacity: 0.2;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `

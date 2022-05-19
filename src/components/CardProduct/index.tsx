@@ -3,16 +3,19 @@ import {
   CardProductImgContainer,
   CardProductInfo,
 } from './styles'
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ProductInfoModal } from '../../containers/ProductInfoModal'
+import { useCardProduct } from '../../hooks/useCardProduct'
 
 export const CardProduct = ({ name, images, currentProductIndex }) => {
-  const [isHover, setIsHover] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
-  const handleMouseEnter = () => setIsHover(true)
-  const handleMouseLeave = () => setIsHover(false)
-  const handleOpen = () => setIsOpen(true)
+  const {
+    isOpen,
+    isHover,
+    handleMouseEnter,
+    handleMouseLeave,
+    handleOpen,
+    setIsOpen,
+  } = useCardProduct()
 
   return (
     <CardProductContainer
@@ -41,19 +44,22 @@ export const CardProduct = ({ name, images, currentProductIndex }) => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 0.5 } }}
             />
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                transition: {
-                  duration: 0.3,
-                  ease: 'easeIn',
-                },
-              }}
-              onClick={handleOpen}
-            >
-              Vista Rápida
-            </motion.button>
+
+            {window.innerWidth > 768 && (
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: 1,
+                  transition: {
+                    duration: 0.3,
+                    ease: 'easeIn',
+                  },
+                }}
+                onClick={handleOpen}
+              >
+                Vista Rápida
+              </motion.button>
+            )}
           </>
         )}
       </CardProductImgContainer>

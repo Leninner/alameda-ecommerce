@@ -1,4 +1,4 @@
-import { useFormHook } from '../../hooks'
+import { useFormHook } from '../../hooks/useFormHook'
 import { FormContainer, Label, Button } from './styles'
 
 export const Form = () => {
