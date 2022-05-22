@@ -62,6 +62,7 @@ export const ProductInfoModal = ({
           imageTwo={currentProduct.images[1]}
         />
         <ProductDescription
+          id={currentProduct.id}
           name={currentProduct.name}
           price={currentProduct.price}
           closeModal={() => setIsOpenModal(false)}

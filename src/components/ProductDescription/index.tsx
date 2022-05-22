@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Campos, MainDescription, Formulario } from './styles'
 
-export const ProductDescription = ({ name, price, closeModal }) => {
+export const ProductDescription = ({ id, name, price, closeModal }) => {
   return (
     <Formulario>
       <MainDescription>
@@ -45,7 +45,7 @@ export const ProductDescription = ({ name, price, closeModal }) => {
 
         <button type="submit">Añadir al Carrito</button>
 
-        <Link to={`/shop/${name.split(' ')[0]}`} onClick={closeModal}>
+        <Link to={`/shop/id=${id}/${name.split(' ')[0]}`} onClick={closeModal}>
           Ver elemento completo
         </Link>
       </Campos>

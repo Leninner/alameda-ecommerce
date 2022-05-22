@@ -6,8 +6,21 @@ import {
 import { motion } from 'framer-motion'
 import { ProductInfoModal } from '../../containers/ProductInfoModal'
 import { useCardProduct } from '../../hooks/useCardProduct'
+import { productInterface } from '../../interfaces'
 
-export const CardProduct = ({ name, images, currentProductIndex }) => {
+interface CardProductProps {
+  name: string
+  images: string[]
+  currentProductIndex?: number
+  isMaybe?: boolean
+}
+
+export const CardProduct = ({
+  name,
+  images,
+  currentProductIndex,
+  isMaybe,
+}: CardProductProps) => {
   const {
     isOpen,
     isHover,
@@ -45,7 +58,7 @@ export const CardProduct = ({ name, images, currentProductIndex }) => {
               animate={{ opacity: 1, transition: { duration: 0.5 } }}
             />
 
-            {window.innerWidth > 768 && (
+            {window.innerWidth > 768 && !isMaybe && (
               <motion.button
                 initial={{ opacity: 0 }}
                 animate={{
