@@ -18,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<h1>Cart</h1>} />
+          <Route path="/shop/:productName" element={<h1>Shop</h1>} />
           <Route path="*" element={<Home />} />
         </Routes>
       </Layout>

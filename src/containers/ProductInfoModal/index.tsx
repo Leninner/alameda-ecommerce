@@ -64,6 +64,7 @@ export const ProductInfoModal = ({
         <ProductDescription
           name={currentProduct.name}
           price={currentProduct.price}
+          closeModal={() => setIsOpenModal(false)}
         />
       </ModalBody>
 
