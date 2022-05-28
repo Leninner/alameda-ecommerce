@@ -45,8 +45,11 @@ export const NextButton = styled.span`
 `
 
 export const ModalBody = styled.div`
-  width: 70%;
+  ${({ withoutMarginTop }) =>
+    withoutMarginTop ? `margin-top: 50px;` : `margin-top: 20vh;`}
+  }
+
+  width: 100%;
   display: flex;
-  margin-top: 20vh;
   min-height: 100vh;
 `

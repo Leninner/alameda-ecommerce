@@ -7,6 +7,7 @@ export const Formulario = styled.form`
 export const MainDescription = styled.div`
   display: block;
   width: 380px;
+  ${({ fullWidth }) => fullWidth && `width: 100%;`}
 
   h1 {
     font-size: calc(2.2 * 1rem);
@@ -29,6 +30,7 @@ export const Campos = styled.div`
 
   label {
     margin: 2rem 0;
+
     span {
       display: block;
     }
@@ -37,7 +39,7 @@ export const Campos = styled.div`
   }
 
   select {
-    width: 320px;
+    ${({ fullWidth }) => (fullWidth ? `width: 100%;` : `width: 320px;`)}
     height: 69px;
     padding: 0 20px;
     border: 1px solid grey;
@@ -61,7 +63,8 @@ export const Campos = styled.div`
   }
 
   button {
-    width: auto;
+    ${({ fullWidth }) => (fullWidth ? `width: 100%;` : `width: auto;`)}
+
     height: auto;
     border-width: 0;
     text-align: center;

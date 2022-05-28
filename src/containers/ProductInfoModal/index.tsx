@@ -10,13 +10,14 @@ import {
 } from './styles'
 import { ImageDescription } from '../../components/ImageDescription'
 import { ProductDescription } from '../../components/ProductDescription'
+import { stateInterface } from '../../interfaces'
 
 export const ProductInfoModal = ({
   setIsOpen: setIsOpenModal,
   currentProductIndex,
 }) => {
   const modalRoot: any = document.getElementById('modal-root')
-  const state = useSelector((state: any) => state)
+  const state = useSelector((state: stateInterface) => state)
 
   // Efecto para evitar el scroll en el body al abrir un modal
   useEffect(() => {
@@ -61,6 +62,7 @@ export const ProductInfoModal = ({
           imageOne={currentProduct.images[0]}
           imageTwo={currentProduct.images[1]}
         />
+
         <ProductDescription
           id={currentProduct.id}
           name={currentProduct.name}

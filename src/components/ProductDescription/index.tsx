@@ -1,10 +1,23 @@
 import { Link } from 'react-router-dom'
 import { Campos, MainDescription, Formulario } from './styles'
 
-export const ProductDescription = ({ id, name, price, closeModal }) => {
+interface ProductInfoModalProps {
+  id?: number
+  name?: string
+  price?: number
+  closeModal?: () => void
+  fullWidth?: boolean
+}
+
+export const ProductDescription = ({
+  id,
+  name,
+  price,
+  closeModal,
+}: ProductInfoModalProps) => {
   return (
     <Formulario>
-      <MainDescription>
+      <MainDescription fullWidth>
         <h1>{name}</h1>
         <span>$ {price}</span>
 
@@ -16,7 +29,7 @@ export const ProductDescription = ({ id, name, price, closeModal }) => {
         </p>
       </MainDescription>
 
-      <Campos>
+      <Campos fullWidth>
         <label htmlFor="size">
           <span>Tamaño:</span>
 
@@ -45,7 +58,7 @@ export const ProductDescription = ({ id, name, price, closeModal }) => {
 
         <button type="submit">Añadir al Carrito</button>
 
-        <Link to={`/shop/id=${id}/${name.split(' ')[0]}`} onClick={closeModal}>
+        <Link to={`/shop/id=${id}/${name?.split(' ')[0]}`} onClick={closeModal}>
           Ver elemento completo
         </Link>
       </Campos>

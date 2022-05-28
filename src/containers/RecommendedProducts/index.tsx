@@ -1,17 +1,22 @@
 import { useSelector } from 'react-redux'
 import { stateInterface, productInterface } from '../../interfaces'
-import { useParams } from 'react-router-dom'
 import { CardProduct } from '../../components/CardProduct'
+import { ProductListContainer } from '../ProductList/styles'
+import styled from 'styled-components'
 
-export const RecommendedProducts = () => {
+export const RecommendedProducts = ({ id }) => {
   const productsList = useSelector(
     ({ shopList: { filteredProducts } }: stateInterface) => filteredProducts
   )
-  const { id } = useParams()
 
   const recommendedProducts = productsList.filter(
     (product: productInterface) => product.id !== Number(id)
   )
+
+  const Title = styled.h1`
+    font-size: 2.6rem;
+    font-weight: normal;
+  `
 
   // Función que recolenta 5 productos al azar desde un arreglo
   // const getRandomProducts = (products: productInterface[]) => {
@@ -27,13 +32,13 @@ export const RecommendedProducts = () => {
 
   return (
     <div>
-      <h1>Quizá también te guste</h1>
+      <Title>Quizás también te guste</Title>
 
-      <ul>
+      <ProductListContainer>
         {recommendedProducts.slice(0, 5).map((product: productInterface) => (
           <CardProduct {...product} isMaybe key={product.id} />
         ))}
-      </ul>
+      </ProductListContainer>
     </div>
   )
 }
