@@ -14,10 +14,11 @@ export const ProductDescription = ({
   name,
   price,
   closeModal,
+  fullWidth,
 }: ProductInfoModalProps) => {
   return (
     <Formulario>
-      <MainDescription fullWidth>
+      <MainDescription fullWidth={fullWidth}>
         <h1>{name}</h1>
         <span>$ {price}</span>
 
@@ -29,7 +30,7 @@ export const ProductDescription = ({
         </p>
       </MainDescription>
 
-      <Campos fullWidth>
+      <Campos fullWidth={fullWidth}>
         <label htmlFor="size">
           <span>Tamaño:</span>
 
@@ -58,9 +59,14 @@ export const ProductDescription = ({
 
         <button type="submit">Añadir al Carrito</button>
 
-        <Link to={`/shop/id=${id}/${name?.split(' ')[0]}`} onClick={closeModal}>
-          Ver elemento completo
-        </Link>
+        {!fullWidth && (
+          <Link
+            to={`/shop/id=${id}/${name?.split(' ')[0]}`}
+            onClick={closeModal}
+          >
+            Ver elemento completo
+          </Link>
+        )}
       </Campos>
     </Formulario>
   )

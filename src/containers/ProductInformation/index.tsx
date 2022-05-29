@@ -15,7 +15,13 @@ export const ProductInformation = ({ id }) => {
 
   return (
     <div>
-      <span>Tienda {'>'} Túnica Lounge / Azul</span>
+      <span
+        style={{
+          cursor: 'pointer',
+        }}
+      >
+        Tienda {'>'} Túnica Lounge / Azul
+      </span>
 
       <ModalBody withoutMarginTop>
         <ImageDescription
