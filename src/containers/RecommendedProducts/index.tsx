@@ -2,9 +2,20 @@ import { useSelector } from 'react-redux'
 import { stateInterface, productInterface } from '../../interfaces'
 import { CardProduct } from '../../components/CardProduct'
 import { ProductListContainer } from '../ProductList/styles'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { useEffect } from 'react'
 
 export const RecommendedProducts = ({ id }) => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch({
+      type: 'SEARCH_BY_CATEGORY',
+      payload: 'all',
+    })
+  }, [])
+
   const productsList = useSelector(
     ({ shopList: { filteredProducts } }: stateInterface) => filteredProducts
   )
@@ -17,18 +28,6 @@ export const RecommendedProducts = ({ id }) => {
     font-size: 2.6rem;
     font-weight: normal;
   `
-
-  // Función que recolenta 5 productos al azar desde un arreglo
-  // const getRandomProducts = (products: productInterface[]) => {
-  //   const randomProducts: any = []
-
-  //   for (let i = 0; i < 5; i++) {
-  //     const randomIndex = Math.floor(Math.random() * products.length)
-  //     randomProducts.push(products[randomIndex])
-  //   }
-
-  //   return randomProducts
-  // }
 
   return (
     <div>
