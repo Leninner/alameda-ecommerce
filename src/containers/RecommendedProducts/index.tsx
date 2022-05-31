@@ -36,7 +36,7 @@ export const RecommendedProducts = ({ id }) => {
 
       <ProductListContainer>
         {recommendedProducts.slice(0, 5).map((product: productInterface) => (
-          <CardProduct {...product} isMaybe key={product.id} />
+          <CardProduct product={product} key={product.id} isMaybe />
         ))}
       </ProductListContainer>
     </div>

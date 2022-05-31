@@ -14,7 +14,7 @@ export const ProductList = () => {
         (product: productInterface, currentProductIndex: number) => (
           <CardProduct
             key={product.id}
-            {...product}
+            product={product}
             currentProductIndex={currentProductIndex}
           />
         )

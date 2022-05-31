@@ -20,3 +20,9 @@ export interface stateInterface {
     filteredProducts: productInterface[]
   }
 }
+
+export interface CardProductProps {
+  product: productInterface
+  currentProductIndex?: number
+  isMaybe?: boolean
+}
