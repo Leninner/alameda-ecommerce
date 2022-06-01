@@ -28,6 +28,14 @@ export const ProductDescription = ({
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut ...
         </p>
+
+        <h4>DETALLES</h4>
+
+        <ul>
+          <li>100% algodón</li>
+          <li>Lavar en lavadora en frío</li>
+          <li>Secar en secadora a baja temperatura</li>
+        </ul>
       </MainDescription>
 
       <Campos fullWidth={fullWidth}>

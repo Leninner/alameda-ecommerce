@@ -23,6 +23,10 @@ export const MainDescription = styled.div`
     margin: 2rem 0;
     font-weight: normal;
   }
+
+  ul {
+    padding: 0 0 0 3rem;
+  }
 `
 
 export const Campos = styled.div`

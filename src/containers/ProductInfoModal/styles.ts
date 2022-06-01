@@ -52,4 +52,8 @@ export const ModalBody = styled.div`
   width: 100%;
   display: flex;
   min-height: 100vh;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
