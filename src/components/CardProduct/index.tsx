@@ -27,7 +27,7 @@ export const CardProduct = ({
 
   return (
     <>
-      {isMaybe ? (
+      {isMaybe || window.innerWidth < 768 ? (
         <Link
           to={`/shop/id=${id}/${name.split(' ')[0]}`}
           style={{
