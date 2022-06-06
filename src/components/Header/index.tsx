@@ -20,9 +20,7 @@ import { StateInterface } from '../../interfaces'
 export const Header = () => {
   const SIZE = '20'
   const { cart } = useSelector((state: StateInterface) => state)
-
   const [isOpen, setIsOpen] = useState(false)
-
   const handleOpen = () => setIsOpen(!isOpen)
 
   return (
@@ -70,7 +68,8 @@ export const Header = () => {
 
         <ShopCart>
           <AiOutlineShoppingCart size={SIZE} />
-          <span>{cart.length}</span>
+
+          <span>{cart.cart.length}</span>
         </ShopCart>
       </SocialOptions>
     </HeaderContainer>

@@ -10,44 +10,26 @@ import {
 } from './styles'
 import { ImageDescription } from '../../components/ImageDescription'
 import { ProductDescription } from '../../components/ProductDescription'
-import { stateInterface } from '../../interfaces'
+import { StateInterface } from '../../interfaces'
+import { useProductInfoModal } from '../../hooks/useProductInforModal'
 
 export const ProductInfoModal = ({
   setIsOpen: setIsOpenModal,
   currentProductIndex,
 }) => {
-  const modalRoot: any = document.getElementById('modal-root')
-  const state = useSelector((state: stateInterface) => state)
-
-  // Efecto para evitar el scroll en el body al abrir un modal
   useEffect(() => {
     document.getElementsByTagName('body')[0].style.overflow = 'hidden'
 
     return () => {
       document.getElementsByTagName('body')[0].style.overflow = 'auto'
     }
-  })
+  }, [])
 
-  const [currentIndex, setCurrentIndex] = useState(currentProductIndex)
-  const [currentProduct, setCurrentProduct] = useState(
-    state.shopList.filteredProducts[currentIndex]
-  )
+  const modalRoot: any = document.getElementById('modal-root')
+  const state = useSelector((state: StateInterface) => state)
 
-  const handleNextProduct = () => {
-    if (currentIndex < state.shopList.filteredProducts.length - 1) {
-      setCurrentIndex(currentIndex + 1)
-    }
-  }
-
-  const handlePreviousProduct = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1)
-    }
-  }
-
-  useEffect(() => {
-    setCurrentProduct(state.shopList.filteredProducts[currentIndex])
-  }, [currentIndex])
+  const { currentProduct, handlePreviousProduct, handleNextProduct } =
+    useProductInfoModal(currentProductIndex, state)
 
   console.log({
     currentProduct,

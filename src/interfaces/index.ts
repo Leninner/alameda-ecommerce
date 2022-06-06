@@ -31,7 +31,9 @@ export type Inputs = {
 }
 
 export interface StateInterface {
-  cart: productInterface[]
+  cart: {
+    cart: productInterface[]
+  }
   shopList: {
     filteredProducts: productInterface[]
   }
