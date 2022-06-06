@@ -1,18 +1,15 @@
 import { Link } from 'react-router-dom'
+import { productInterface } from '../../interfaces'
 import { Campos, MainDescription, Formulario } from './styles'
 
 interface ProductInfoModalProps {
-  id?: number
-  name?: string
-  price?: number
+  product: productInterface
   closeModal?: () => void
   fullWidth?: boolean
 }
 
 export const ProductDescription = ({
-  id,
-  name,
-  price,
+  product: { id, name, price, description, details, tallas },
   closeModal,
   fullWidth,
 }: ProductInfoModalProps) => {
@@ -24,17 +21,14 @@ export const ProductDescription = ({
 
         <h4>DESCRIPCIÓN</h4>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut ...
-        </p>
+        <p>{description}</p>
 
         <h4>DETALLES</h4>
 
         <ul>
-          <li>100% algodón</li>
-          <li>Lavar en lavadora en frío</li>
-          <li>Secar en secadora a baja temperatura</li>
+          {details.map(detail => (
+            <li key={detail}>{detail}</li>
+          ))}
         </ul>
       </MainDescription>
 
@@ -44,11 +38,12 @@ export const ProductDescription = ({
 
           <select name="" id="size">
             <option value="">Seleccionar Tamaño</option>
-            <option value="0">0</option>
-            <option value="2">2</option>
-            <option value="4">4</option>
-            <option value="6">6</option>
-            <option value="8">8</option>
+
+            {Object.entries(tallas).map(([tallaName, { stock }]) => (
+              <option key={tallaName} value={tallaName}>
+                {tallaName} ({stock} disponibles)
+              </option>
+            ))}
           </select>
         </label>
 

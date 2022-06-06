@@ -1,9 +1,25 @@
 export interface productInterface {
   id: number
   name: string
-  price: number
-  image: string
   images: string[]
+  isInOffer: boolean
+  offerPrice: number
+  price: number
+  description: string
+  details: string[]
+  tallas: Tallas
+  category: string
+}
+
+interface Tallas {
+  S?: TallasInfo
+  M?: TallasInfo
+  L?: TallasInfo
+}
+
+interface TallasInfo {
+  stock: number
+  cantidad: number
 }
 
 export type Inputs = {

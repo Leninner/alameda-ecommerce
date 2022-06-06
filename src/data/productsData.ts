@@ -11,7 +11,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -40,7 +40,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -69,7 +69,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -98,7 +98,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -127,7 +127,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -156,7 +156,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -185,7 +185,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -214,7 +214,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -243,7 +243,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -272,7 +272,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -301,7 +301,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -329,7 +329,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -358,7 +358,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -387,7 +387,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
@@ -416,7 +416,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    detalles: [
+    details: [
       '100 % algodón',
       'Lavar en lavadora en frío',
       'Secar en secadora a baja temperatura',
