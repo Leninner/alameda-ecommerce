@@ -21,6 +21,18 @@ export const shopListReducer = (state = initialState, action) => {
         ...state,
         filteredProducts: filteredKeywords[payload](),
       }
+
+    case 'UPDATE_STOCK':
+      const { product } = payload
+      const newProducts = [...state.filteredProducts]
+      const productIndex = newProducts.findIndex(p => p.id === product.id)
+      newProducts[productIndex] = product
+
+      return {
+        ...state,
+        filteredProducts: newProducts,
+      }
+
     default:
       return state
   }

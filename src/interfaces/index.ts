@@ -11,7 +11,7 @@ export interface productInterface {
   category: string
 }
 
-interface Tallas {
+export interface Tallas {
   S?: TallasInfo
   M?: TallasInfo
   L?: TallasInfo
@@ -30,7 +30,7 @@ export type Inputs = {
   asunto: string
 }
 
-export interface stateInterface {
+export interface StateInterface {
   cart: productInterface[]
   shopList: {
     filteredProducts: productInterface[]

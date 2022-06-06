@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { productInterface } from '../interfaces'
+import { productInterface, Tallas } from '../interfaces'
 import { useDispatch } from 'react-redux'
 
 export const useProductDescription = () => {
@@ -9,7 +9,12 @@ export const useProductDescription = () => {
 
   const handleSizeChange = e => setSize(e.target.value)
 
-  const handleQuantityChange = (e, tallas, quantity, size) => {
+  const handleQuantityChange = (
+    e: any,
+    tallas: Tallas,
+    quantity: number,
+    size: string
+  ) => {
     setQuantity(
       quantity < 1
         ? 1
@@ -26,12 +31,38 @@ export const useProductDescription = () => {
     quantity: number,
     size: string
   ) => {
+    const productToSend = {
+      ...product,
+      tallas: {
+        ...product.tallas,
+        [size]: {
+          ...product.tallas[size],
+          cantidad: quantity,
+          stock: product.tallas[size].stock - quantity,
+        },
+      },
+    }
+
     dispatch({
       type: 'ADD_TO_CART',
       payload: {
-        product,
-        quantity,
-        size,
+        product: productToSend,
+      },
+    })
+
+    dispatch({
+      type: 'UPDATE_STOCK',
+      payload: {
+        product: {
+          ...productToSend,
+          tallas: {
+            ...productToSend.tallas,
+            [size]: {
+              ...productToSend.tallas[size],
+              cantidad: 0,
+            },
+          },
+        },
       },
     })
   }

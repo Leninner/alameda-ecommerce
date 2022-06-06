@@ -15,20 +15,11 @@ import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
-interface StateProps {
-  cart: {
-    cart: Product[]
-  }
-}
-
-interface Product {}
+import { StateInterface } from '../../interfaces'
 
 export const Header = () => {
   const SIZE = '20'
-  const { cart } = useSelector((state: StateProps) => state.cart)
-
-  console.log(cart)
+  const { cart } = useSelector((state: StateInterface) => state)
 
   const [isOpen, setIsOpen] = useState(false)
 
