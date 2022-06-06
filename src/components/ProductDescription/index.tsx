@@ -1,18 +1,24 @@
 import { Link } from 'react-router-dom'
-import { ProductInfoModalProps } from '../../interfaces'
+import { ProductInfoModalProps, productInterface } from '../../interfaces'
 import { Campos, MainDescription, Formulario } from './styles'
 import { useProductDescription } from '../../hooks/useProductDescription'
 
 export const ProductDescription = ({
-  product: { id, name, price, description, details, tallas },
+  product,
   closeModal,
   fullWidth,
 }: ProductInfoModalProps) => {
-  const { quantity, size, handleSizeChange, handleQuantityChange } =
+  const { id, name, price, description, details, tallas } = product
+  const { quantity, size, handleSizeChange, handleQuantityChange, sendToCart } =
     useProductDescription()
 
+  const handleSubmitProductToCart = (e, product: productInterface) => {
+    e.preventDefault()
+    sendToCart(product, quantity, size)
+  }
+
   return (
-    <Formulario>
+    <Formulario onSubmit={e => handleSubmitProductToCart(e, product)}>
       <MainDescription fullWidth={fullWidth}>
         <h1>{name}</h1>
         <span>$ {price}</span>
