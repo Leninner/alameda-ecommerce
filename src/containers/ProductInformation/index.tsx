@@ -30,9 +30,20 @@ export const ProductInformation = ({ id }) => {
         />
 
         <ProductDescription
-          id={currentProduct?.id}
-          name={currentProduct?.name}
-          price={currentProduct?.price}
+          product={
+            currentProduct || {
+              id: 0,
+              name: '',
+              price: 0,
+              description: '',
+              details: [],
+              images: [],
+              tallas: {},
+              isInOffer: false,
+              offerPrice: 0,
+              category: '',
+            }
+          }
           fullWidth
         />
       </ModalBody>
