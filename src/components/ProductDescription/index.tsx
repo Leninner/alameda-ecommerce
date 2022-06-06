@@ -1,17 +1,15 @@
 import { Link } from 'react-router-dom'
-import { productInterface, ProductInfoModalProps } from '../../interfaces'
+import { ProductInfoModalProps } from '../../interfaces'
 import { Campos, MainDescription, Formulario } from './styles'
-import { useState } from 'react'
+import { useProductDescription } from '../../hooks/useProductDescription'
 
 export const ProductDescription = ({
   product: { id, name, price, description, details, tallas },
   closeModal,
   fullWidth,
 }: ProductInfoModalProps) => {
-  const [quantity, setQuantity] = useState(1)
-  const [size, setSize] = useState('')
-
-  const handleSizeChange = e => setSize(e.target.value)
+  const { quantity, size, handleSizeChange, handleQuantityChange } =
+    useProductDescription()
 
   return (
     <Formulario>
@@ -53,15 +51,7 @@ export const ProductDescription = ({
             id="quantity"
             value={quantity}
             onChange={e => {
-              setQuantity(
-                quantity < 1
-                  ? 1
-                  : Number(e.target.value) > tallas[size]?.stock
-                  ? tallas[size]?.stock
-                  : Number(e.target.value) < 1
-                  ? 1
-                  : Number(e.target.value)
-              )
+              handleQuantityChange(e, tallas, quantity, size)
             }}
           />
         </label>
