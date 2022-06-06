@@ -1,13 +1,7 @@
 import { Link } from 'react-router-dom'
-import { productInterface } from '../../interfaces'
+import { productInterface, ProductInfoModalProps } from '../../interfaces'
 import { Campos, MainDescription, Formulario } from './styles'
 import { useState } from 'react'
-
-interface ProductInfoModalProps {
-  product: productInterface
-  closeModal?: () => void
-  fullWidth?: boolean
-}
 
 export const ProductDescription = ({
   product: { id, name, price, description, details, tallas },
@@ -17,11 +11,7 @@ export const ProductDescription = ({
   const [quantity, setQuantity] = useState(1)
   const [size, setSize] = useState('')
 
-  const handleSizeChange = e => {
-    setSize(e.target.value)
-  }
-
-  console.log(quantity)
+  const handleSizeChange = e => setSize(e.target.value)
 
   return (
     <Formulario>

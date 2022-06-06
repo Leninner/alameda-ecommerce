@@ -42,3 +42,9 @@ export interface CardProductProps {
   currentProductIndex?: number
   isMaybe?: boolean
 }
+
+export interface ProductInfoModalProps {
+  product: productInterface
+  closeModal?: () => void
+  fullWidth?: boolean
+}
