@@ -20,11 +20,9 @@ export const ProductDescription = ({
         <span>$ {price}</span>
 
         <h4>DESCRIPCIÓN</h4>
-
         <p>{description}</p>
 
         <h4>DETALLES</h4>
-
         <ul>
           {details.map(detail => (
             <li key={detail}>{detail}</li>
