@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { productInterface } from '../../interfaces'
 import { Campos, MainDescription, Formulario } from './styles'
+import { useState } from 'react'
 
 interface ProductInfoModalProps {
   product: productInterface
@@ -13,6 +14,15 @@ export const ProductDescription = ({
   closeModal,
   fullWidth,
 }: ProductInfoModalProps) => {
+  const [quantity, setQuantity] = useState(1)
+  const [size, setSize] = useState('')
+
+  const handleSizeChange = e => {
+    setSize(e.target.value)
+  }
+
+  console.log(quantity)
+
   return (
     <Formulario>
       <MainDescription fullWidth={fullWidth}>
@@ -36,7 +46,7 @@ export const ProductDescription = ({
         <label htmlFor="size">
           <span>Tamaño:</span>
 
-          <select name="" id="size">
+          <select name="" id="size" onChange={handleSizeChange}>
             <option value="">Seleccionar Tamaño</option>
 
             {Object.entries(tallas).map(([tallaName, { stock }]) => (
@@ -51,11 +61,17 @@ export const ProductDescription = ({
           <span>Cantidad:</span>
           <input
             type="number"
-            name=""
+            name="number"
             id="quantity"
-            value={1}
-            onChange={() => {
-              console.log('cambio')
+            value={quantity}
+            onChange={e => {
+              setQuantity(
+                quantity < 1
+                  ? 1
+                  : Number(e.target.value) > tallas[size]?.stock
+                  ? tallas[size]?.stock
+                  : Number(e.target.value)
+              )
             }}
           />
         </label>

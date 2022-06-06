@@ -6,6 +6,7 @@ import { LookBook } from '../pages/LookBook'
 import { About } from '../pages/About'
 import { Contact } from '../pages/Contact'
 import { ProductInfoPage } from '../pages/ProductInfoPage'
+import { Cart } from '../pages/Cart'
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           <Route path="/lookbook" element={<LookBook />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<h1>Cart</h1>} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Cart />} />
           <Route
             path="/shop/id=:id/:productName"
             element={<ProductInfoPage />}
