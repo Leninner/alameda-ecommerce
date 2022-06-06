@@ -70,6 +70,8 @@ export const ProductDescription = ({
                   ? 1
                   : Number(e.target.value) > tallas[size]?.stock
                   ? tallas[size]?.stock
+                  : Number(e.target.value) < 1
+                  ? 1
                   : Number(e.target.value)
               )
             }}
