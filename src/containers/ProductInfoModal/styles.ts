@@ -6,7 +6,6 @@ export const ProductInfoModalContainer = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -45,12 +44,10 @@ export const NextButton = styled.span`
 `
 
 export const ModalBody = styled.div`
-  ${({ withoutMarginTop }) =>
-    withoutMarginTop ? `margin-top: 50px;` : `margin-top: 20vh;`}
-  }
-
+  margin-top: 50px;
   width: 100%;
   display: flex;
+  justify-content: center;
   min-height: 100vh;
 
   @media (max-width: 768px) {
