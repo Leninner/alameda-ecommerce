@@ -14,7 +14,9 @@ export const ProductInfoModalContainer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  overflow-y: auto;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
 `
