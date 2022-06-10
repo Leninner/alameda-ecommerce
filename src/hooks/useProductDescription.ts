@@ -6,6 +6,7 @@ export const useProductDescription = () => {
   const [quantity, setQuantity] = useState(1)
   const [size, setSize] = useState('')
   const dispatch = useDispatch()
+  const [error, setError] = useState(false)
 
   const handleSizeChange = e => setSize(e.target.value)
 
@@ -31,41 +32,53 @@ export const useProductDescription = () => {
     quantity: number,
     size: string
   ) => {
-    const productToSend = {
-      ...product,
-      tallas: {
-        ...product.tallas,
-        [size]: {
-          ...product.tallas[size],
-          cantidad: quantity,
-          stock: product.tallas[size].stock - quantity,
+    try {
+      const productToSend = {
+        ...product,
+        tallas: {
+          ...product.tallas,
+          [size]: {
+            ...product.tallas[size],
+            cantidad: quantity,
+            stock: product.tallas[size].stock - quantity,
+          },
         },
-      },
-    }
+      }
 
-    dispatch({
-      type: 'ADD_TO_CART',
-      payload: {
-        product: productToSend,
-      },
-    })
+      dispatch({
+        type: 'ADD_TO_CART',
+        payload: {
+          product: productToSend,
+        },
+      })
 
-    dispatch({
-      type: 'UPDATE_STOCK',
-      payload: {
-        product: {
-          ...productToSend,
-          tallas: {
-            ...productToSend.tallas,
-            [size]: {
-              ...productToSend.tallas[size],
-              cantidad: 0,
+      dispatch({
+        type: 'UPDATE_STOCK',
+        payload: {
+          product: {
+            ...productToSend,
+            tallas: {
+              ...productToSend.tallas,
+              [size]: {
+                ...productToSend.tallas[size],
+                cantidad: 0,
+              },
             },
           },
         },
-      },
-    })
+      })
+    } catch (error) {
+      setError(true)
+    }
   }
 
-  return { quantity, size, handleSizeChange, handleQuantityChange, sendToCart }
+  return {
+    quantity,
+    size,
+    handleSizeChange,
+    handleQuantityChange,
+    sendToCart,
+    error,
+    setError,
+  }
 }

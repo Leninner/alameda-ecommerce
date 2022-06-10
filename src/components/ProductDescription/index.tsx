@@ -2,23 +2,42 @@ import { Link } from 'react-router-dom'
 import { ProductInfoModalProps, productInterface } from '../../interfaces'
 import { Campos, MainDescription, Formulario } from './styles'
 import { useProductDescription } from '../../hooks/useProductDescription'
+import { PopUpModal } from '../PopUpModal'
+import { useSelector } from 'react-redux'
 
 export const ProductDescription = ({
   product,
   closeModal,
   fullWidth,
 }: ProductInfoModalProps) => {
+  const { cart } = useSelector((state: any) => state.cart)
   const { id, name, price, description, details, tallas } = product
-  const { quantity, size, handleSizeChange, handleQuantityChange, sendToCart } =
-    useProductDescription()
+  const {
+    quantity,
+    size,
+    handleSizeChange,
+    handleQuantityChange,
+    sendToCart,
+    error,
+    setError,
+  } = useProductDescription()
 
-  const handleSubmitProductToCart = (e, product: productInterface) => {
+  const handleSubmitProductToCart = (
+    e: Event,
+    product: productInterface,
+    error?: boolean
+  ) => {
     e.preventDefault()
-    sendToCart(product, quantity, size)
+
+    try {
+      sendToCart(product, quantity, size)
+    } catch (err) {
+      setError(true)
+    }
   }
 
   return (
-    <Formulario onSubmit={e => handleSubmitProductToCart(e, product)}>
+    <Formulario onSubmit={(e: Event) => handleSubmitProductToCart(e, product)}>
       <MainDescription fullWidth={fullWidth}>
         <h1>{name}</h1>
         <span>$ {price}</span>
@@ -71,6 +90,13 @@ export const ProductDescription = ({
           >
             Ver elemento completo
           </Link>
+        )}
+
+        {error && (
+          <PopUpModal
+            description={'Selecciona la opción de tamaño'}
+            quantity={cart.length}
+          />
         )}
       </Campos>
     </Formulario>

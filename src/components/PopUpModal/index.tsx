@@ -1,16 +1,30 @@
 import { createPortal } from 'react-dom'
+import { PopUpModalContainer, PopupButton } from './styles'
 
-export const PopUpModal = () => {
-  const popupRoot = document.getElementById('popup-root')!
+interface PopUpModalProps {
+  description: string
+  quantity?: number
+}
+
+export const PopUpModal = ({ description, quantity }: PopUpModalProps) => {
+  const popupRoot: any = document.getElementById('modal-root')
+
+  console.log(quantity)
 
   return createPortal(
-    <div>
-      <p>NO SE PUDO AÑADIR EL ARTÍCULO</p>
+    <PopUpModalContainer>
+      <span>NO SE PUDO AÑADIR EL ARTÍCULO</span>
 
-      <p>Lo sentimos, solo quedan 3 de este artículo.</p>
+      {quantity ? (
+        <p>
+          <span>Lo sentimos, sola quedan {quantity} de este artículo</span>
+        </p>
+      ) : (
+        <p>{description}</p>
+      )}
 
-      <button>ESTÁ BIEN</button>
-    </div>,
+      <PopupButton>ESTÁ BIEN</PopupButton>
+    </PopUpModalContainer>,
     popupRoot
   )
 }

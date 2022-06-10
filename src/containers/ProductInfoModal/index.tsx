@@ -31,10 +31,6 @@ export const ProductInfoModal = ({
   const { currentProduct, handlePreviousProduct, handleNextProduct } =
     useProductInfoModal(currentProductIndex, state)
 
-  console.log({
-    currentProduct,
-  })
-
   return createPortal(
     <ProductInfoModalContainer>
       <CloseButton onClick={() => setIsOpenModal(false)}>X</CloseButton>
