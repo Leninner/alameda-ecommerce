@@ -1,13 +1,13 @@
 import { ImageDescription } from '../../components/ImageDescription'
 import { ProductDescription } from '../../components/ProductDescription'
 import { useSelector } from 'react-redux'
-import { stateInterface } from '../../interfaces'
+import { StateInterface } from '../../interfaces'
 import { ModalBody } from '../ProductInfoModal/styles'
 
 export const ProductInformation = ({ id }) => {
   const {
     shopList: { filteredProducts },
-  } = useSelector((state: stateInterface) => state)
+  } = useSelector((state: StateInterface) => state)
 
   const currentProduct = filteredProducts.find(
     product => product.id === Number(id)

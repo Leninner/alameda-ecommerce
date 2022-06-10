@@ -1,11 +1,11 @@
 import { ProductListContainer } from './styles'
 import { CardProduct } from '../../components/CardProduct'
 import { useSelector } from 'react-redux'
-import { productInterface, stateInterface } from '../../interfaces'
+import { productInterface, StateInterface } from '../../interfaces'
 
 export const ProductList = () => {
   const { filteredProducts } = useSelector(
-    (state: stateInterface) => state.shopList
+    (state: StateInterface) => state.shopList
   )
 
   return (

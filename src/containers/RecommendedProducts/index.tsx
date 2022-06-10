@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { stateInterface, productInterface } from '../../interfaces'
+import { StateInterface, productInterface } from '../../interfaces'
 import { CardProduct } from '../../components/CardProduct'
 import { ProductListContainer } from '../ProductList/styles'
 import { useDispatch } from 'react-redux'
@@ -17,7 +17,7 @@ export const RecommendedProducts = ({ id }) => {
   }, [])
 
   const productsList = useSelector(
-    ({ shopList: { filteredProducts } }: stateInterface) => filteredProducts
+    ({ shopList: { filteredProducts } }: StateInterface) => filteredProducts
   )
 
   const recommendedProducts = productsList.filter(
