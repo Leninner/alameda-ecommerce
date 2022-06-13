@@ -3,27 +3,19 @@ import { PopUpModalContainer, PopupButton } from './styles'
 
 interface PopUpModalProps {
   description: string
-  quantity?: number
+  onClose?: () => void
 }
 
-export const PopUpModal = ({ description, quantity }: PopUpModalProps) => {
+export const PopUpModal = ({ description, onClose }: PopUpModalProps) => {
   const popupRoot: any = document.getElementById('modal-root')
-
-  console.log(quantity)
 
   return createPortal(
     <PopUpModalContainer>
       <span>NO SE PUDO AÑADIR EL ARTÍCULO</span>
 
-      {quantity ? (
-        <p>
-          <span>Lo sentimos, sola quedan {quantity} de este artículo</span>
-        </p>
-      ) : (
-        <p>{description}</p>
-      )}
+      <p>{description}</p>
 
-      <PopupButton>ESTÁ BIEN</PopupButton>
+      <PopupButton onClick={onClose}>ESTÁ BIEN</PopupButton>
     </PopUpModalContainer>,
     popupRoot
   )

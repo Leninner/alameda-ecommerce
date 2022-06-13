@@ -68,6 +68,7 @@ export const useProductDescription = () => {
         },
       })
     } catch (error) {
+      console.log('Selecciona el tamaño')
       setError(true)
     }
   }

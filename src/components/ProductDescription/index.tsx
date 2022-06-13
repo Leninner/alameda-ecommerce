@@ -3,14 +3,12 @@ import { ProductInfoModalProps, productInterface } from '../../interfaces'
 import { Campos, MainDescription, Formulario } from './styles'
 import { useProductDescription } from '../../hooks/useProductDescription'
 import { PopUpModal } from '../PopUpModal'
-import { useSelector } from 'react-redux'
 
 export const ProductDescription = ({
   product,
   closeModal,
   fullWidth,
 }: ProductInfoModalProps) => {
-  const { cart } = useSelector((state: any) => state.cart)
   const { id, name, price, description, details, tallas } = product
   const {
     quantity,
@@ -22,18 +20,9 @@ export const ProductDescription = ({
     setError,
   } = useProductDescription()
 
-  const handleSubmitProductToCart = (
-    e: Event,
-    product: productInterface,
-    error?: boolean
-  ) => {
+  const handleSubmitProductToCart = (e: Event, product: productInterface) => {
     e.preventDefault()
-
-    try {
-      sendToCart(product, quantity, size)
-    } catch (err) {
-      setError(true)
-    }
+    sendToCart(product, quantity, size)
   }
 
   return (
@@ -95,7 +84,7 @@ export const ProductDescription = ({
         {error && (
           <PopUpModal
             description={'Selecciona la opción de tamaño'}
-            quantity={cart.length}
+            onClose={() => setError(false)}
           />
         )}
       </Campos>
