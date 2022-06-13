@@ -12,7 +12,7 @@ export const useProductInfoModal = (
 
   useEffect(() => {
     setCurrentProduct(state.shopList.filteredProducts[currentIndex])
-  }, [currentIndex])
+  }, [currentIndex, state.shopList.filteredProducts])
 
   const handleNextProduct = () => {
     if (currentIndex < state.shopList.filteredProducts.length - 1) {
