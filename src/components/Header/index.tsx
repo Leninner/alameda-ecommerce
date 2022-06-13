@@ -66,11 +66,13 @@ export const Header = () => {
           </a>
         </SocialButtons>
 
-        <ShopCart>
-          <AiOutlineShoppingCart size={SIZE} />
+        <Link to="cart">
+          <ShopCart>
+            <AiOutlineShoppingCart size={SIZE} />
 
-          <span>{cart.cart.length}</span>
-        </ShopCart>
+            <span>{cart.cart.length}</span>
+          </ShopCart>
+        </Link>
       </SocialOptions>
     </HeaderContainer>
   )
