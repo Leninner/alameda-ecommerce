@@ -62,6 +62,7 @@ export const useProductDescription = () => {
         type: 'ADD_TO_CART',
         payload: {
           product: productToSend,
+          size,
         },
       })
 
