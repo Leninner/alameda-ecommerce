@@ -12,6 +12,8 @@ export const Section = styled.section`
   -webkit-font-smoothing: antialiased;
   font-size: calc((1 - 1) * 1.2vw + 1rem);
   line-height: 1.5em;
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
 `
 
