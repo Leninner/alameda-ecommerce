@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 import { productInterface, Tallas } from '../interfaces'
 import { useDispatch } from 'react-redux'
 
@@ -8,7 +8,8 @@ export const useProductDescription = () => {
   const dispatch = useDispatch()
   const [error, setError] = useState(false)
 
-  const handleSizeChange = e => setSize(e.target.value)
+  const handleSizeChange = (e: { target: { value: SetStateAction<string> } }) =>
+    setSize(e.target.value)
 
   const handleQuantityChange = (
     e: any,
@@ -33,14 +34,19 @@ export const useProductDescription = () => {
     size: string
   ) => {
     try {
+      if (product.tallas[size].stock < quantity) {
+        setError(true)
+        throw new Error('No hay stock suficiente')
+      }
+
       const productToSend = {
         ...product,
         tallas: {
           ...product.tallas,
           [size]: {
             ...product.tallas[size],
-            cantidad: quantity,
             stock: product.tallas[size].stock - quantity,
+            cantidad: quantity,
           },
         },
       }
@@ -67,10 +73,16 @@ export const useProductDescription = () => {
           },
         },
       })
+
+      setQuantity(1)
     } catch (error) {
-      console.log('Selecciona el tamaño')
       setError(true)
     }
+  }
+
+  const handleSubmitProductToCart = (e: Event, product: productInterface) => {
+    e.preventDefault()
+    sendToCart(product, quantity, size)
   }
 
   return {
@@ -78,8 +90,8 @@ export const useProductDescription = () => {
     size,
     handleSizeChange,
     handleQuantityChange,
-    sendToCart,
     error,
     setError,
+    handleSubmitProductToCart,
   }
 }

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ProductInfoModalProps, productInterface } from '../../interfaces'
+import { ProductInfoModalProps } from '../../interfaces'
 import { Campos, MainDescription, Formulario } from './styles'
 import { useProductDescription } from '../../hooks/useProductDescription'
 import { PopUpModal } from '../PopUpModal'
@@ -13,17 +13,12 @@ export const ProductDescription = ({
   const {
     quantity,
     size,
-    handleSizeChange,
-    handleQuantityChange,
-    sendToCart,
     error,
     setError,
+    handleSizeChange,
+    handleQuantityChange,
+    handleSubmitProductToCart,
   } = useProductDescription()
-
-  const handleSubmitProductToCart = (e: Event, product: productInterface) => {
-    e.preventDefault()
-    sendToCart(product, quantity, size)
-  }
 
   return (
     <Formulario onSubmit={(e: Event) => handleSubmitProductToCart(e, product)}>
