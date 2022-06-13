@@ -16,12 +16,14 @@ import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { StateInterface } from '../../interfaces'
+import { useProductDescription } from '../../hooks/useProductDescription'
 
 export const Header = () => {
   const SIZE = '20'
-  const { cart } = useSelector((state: StateInterface) => state)
+  const { cart } = useSelector((state: StateInterface) => state.cart)
   const [isOpen, setIsOpen] = useState(false)
   const handleOpen = () => setIsOpen(!isOpen)
+  const { getTotalProductsOnCart } = useProductDescription()
 
   return (
     <HeaderContainer>
@@ -70,7 +72,7 @@ export const Header = () => {
           <ShopCart>
             <AiOutlineShoppingCart size={SIZE} />
 
-            <span>{cart.cart.length}</span>
+            <span>{getTotalProductsOnCart(cart)}</span>
           </ShopCart>
         </Link>
       </SocialOptions>

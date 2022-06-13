@@ -96,6 +96,18 @@ export const useProductDescription = () => {
     sendToCart(product, quantity, size)
   }
 
+  const getTotalProductsOnCart = (cart: any) => {
+    return cart.reduce(
+      (acc: any, item: any) =>
+        acc +
+        Object.entries(item.tallas).reduce(
+          (acc2, curr: any) => acc2 + curr[1].cantidad,
+          0
+        ),
+      0
+    )
+  }
+
   return {
     quantity,
     size,
@@ -104,5 +116,6 @@ export const useProductDescription = () => {
     error,
     setError,
     handleSubmitProductToCart,
+    getTotalProductsOnCart,
   }
 }

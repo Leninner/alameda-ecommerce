@@ -4,11 +4,13 @@ import {
   DefaultCartSubtitle,
   DefaultButton,
 } from './styles'
+import { CartList } from '../../containers/CartList'
 
 export const Cart = () => {
   return (
     <Section>
       <DefaultCart />
+      <CartList />
     </Section>
   )
 }
