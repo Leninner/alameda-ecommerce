@@ -6,7 +6,10 @@ export const useProductDescription = () => {
   const [quantity, setQuantity] = useState(1)
   const [size, setSize] = useState('')
   const dispatch = useDispatch()
-  const [error, setError] = useState(false)
+  const [error, setError] = useState({
+    isError: false,
+    errorMessage: '',
+  })
 
   const handleSizeChange = (e: { target: { value: SetStateAction<string> } }) =>
     setSize(e.target.value)
@@ -35,8 +38,12 @@ export const useProductDescription = () => {
   ) => {
     try {
       if (product.tallas[size].stock < quantity) {
-        setError(true)
-        throw new Error('No hay stock suficiente')
+        setError({
+          isError: true,
+          errorMessage: 'No hay suficientes unidades en stock',
+        })
+
+        return
       }
 
       const productToSend = {
@@ -76,7 +83,10 @@ export const useProductDescription = () => {
 
       setQuantity(1)
     } catch (error) {
-      setError(true)
+      setError({
+        isError: true,
+        errorMessage: 'Selecciona la opción de tamaño',
+      })
     }
   }
 

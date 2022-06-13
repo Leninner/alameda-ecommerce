@@ -50,3 +50,8 @@ export interface ProductInfoModalProps {
   closeModal?: () => void
   fullWidth?: boolean
 }
+
+export interface ErrorType {
+  isError: boolean
+  errorMessage: string
+}

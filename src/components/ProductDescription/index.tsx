@@ -76,10 +76,15 @@ export const ProductDescription = ({
           </Link>
         )}
 
-        {error && (
+        {error.isError && (
           <PopUpModal
-            description={'Selecciona la opción de tamaño'}
-            onClose={() => setError(false)}
+            error={error}
+            onClose={() =>
+              setError({
+                isError: false,
+                errorMessage: '',
+              })
+            }
           />
         )}
       </Campos>
