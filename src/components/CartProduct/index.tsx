@@ -7,26 +7,37 @@ import {
   DeleteButton,
 } from './styles'
 
-export const CartProduct = () => {
+const handleIncrement = () => {
+  console.log('Increment')
+}
+
+const handleDecrement = () => {
+  console.log('Decrement')
+}
+
+export const CartProduct = ({ product, tamaño, cantidad }) => {
+  const { name, price, images } = product
+
   return (
     <CartProductContainer>
-      <ImageProduct
-        src="https://images.squarespace-cdn.com/content/v1/5ed00bab777fab6698681c63/1590692796105-B64MYGGU1BDBM8CP437H/ulihu-blue-linen-tunic_0308-v1-FINAL-copy.jpg"
-        alt="some"
-      />
+      <ImageProduct src={images[0]} alt="some" />
 
       <ProductInfo>
-        <h3>Túnica Loudge / Azul</h3>
-        <p>Tamaño: 0</p>
+        <h3>{name}</h3>
+        <p>Tamaño: {tamaño}</p>
       </ProductInfo>
 
       <QuantityManager>
-        <span>-</span>
-        <span>1</span>
-        <span>+</span>
+        <button onClick={handleDecrement} disabled={true}>
+          -
+        </button>
+        <span>{cantidad}</span>
+        <button onClick={handleIncrement} disabled={false}>
+          +
+        </button>
       </QuantityManager>
 
-      <PriceBox>$50.00</PriceBox>
+      <PriceBox>${price}</PriceBox>
 
       <DeleteButton>
         <img

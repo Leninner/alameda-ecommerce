@@ -53,13 +53,6 @@ const controladores = `
 `
 
 export const QuantityManager = styled.div`
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-  letter-spacing: 0em;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  font-size: calc(1 * 1rem);
-  line-height: 1.5em;
   min-width: 90px;
   text-align: center;
   vertical-align: middle;
@@ -68,27 +61,28 @@ export const QuantityManager = styled.div`
   cursor: default;
   font-size: calc(1.3 * 1rem);
 
-  & :first-child {
-    margin-right: 20px;
+  button {
     ${controladores}
-  }
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    text-align: center;
+    outline: none;
+    padding: 0;
+    margin: 0 10px;
 
-  & :last-child {
-    margin-left: 20px;
-    ${controladores}
+    &:disabled {
+      opacity: 0.5;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
   }
 `
 
 export const PriceBox = styled.div`
-  -webkit-text-size-adjust: 100%;
-  overflow-wrap: break-word;
-  --sqs-site-gutter: 4vw;
-  --sqs-mobile-site-gutter: 6vw;
-  --sqs-site-max-width: 1200px;
-  font-style: normal;
-  letter-spacing: 0em;
-  text-transform: none;
-  display: inline-block;
   min-width: 20vw;
   text-align: right;
   vertical-align: middle;
