@@ -21,12 +21,12 @@ export const useProductDescription = () => {
     size: string
   ) => {
     setQuantity(
-      quantity < 1
-        ? 1
+      quantity < 0
+        ? 0
         : Number(e.target.value) > tallas[size]?.stock
         ? tallas[size]?.stock
-        : Number(e.target.value) < 1
-        ? 1
+        : Number(e.target.value) < 0
+        ? 0
         : Number(e.target.value)
     )
   }
@@ -37,10 +37,20 @@ export const useProductDescription = () => {
     size: string
   ) => {
     try {
+      // Ojo a estos ifs
       if (product.tallas[size].stock < quantity) {
         setError({
           isError: true,
           errorMessage: 'No hay suficientes unidades en stock',
+        })
+
+        return
+      }
+
+      if (quantity === 0) {
+        setError({
+          isError: true,
+          errorMessage: 'No puedes agregar 0 unidades',
         })
 
         return
