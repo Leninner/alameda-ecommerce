@@ -23,10 +23,17 @@ export const shopListReducer = (state = initialState, action) => {
       }
 
     case 'UPDATE_STOCK':
-      const { product } = payload
+      const { product, quantity, size } = payload
       const newProducts = [...state.filteredProducts]
       const productIndex = newProducts.findIndex(p => p.id === product.id)
-      newProducts[productIndex] = product
+
+      /**
+       * Si la cantidad es negativa, entonces el stock se incrementa
+       *
+       * Si la cantidad es positiva, entonces el stock se decrementa
+       */
+
+      newProducts[productIndex].tallas[size].stock -= quantity
 
       return {
         ...state,

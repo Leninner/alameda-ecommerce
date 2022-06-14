@@ -79,16 +79,9 @@ export const useProductDescription = () => {
       dispatch({
         type: 'UPDATE_STOCK',
         payload: {
-          product: {
-            ...productToSend,
-            tallas: {
-              ...productToSend.tallas,
-              [size]: {
-                ...productToSend.tallas[size],
-                cantidad: 0,
-              },
-            },
-          },
+          product: productToSend,
+          quantity,
+          size,
         },
       })
 

@@ -6,17 +6,18 @@ import {
   PriceBox,
   DeleteButton,
 } from './styles'
-
-const handleIncrement = () => {
-  console.log('Increment')
-}
-
-const handleDecrement = () => {
-  console.log('Decrement')
-}
+import { useCartProduct } from '../../hooks/useCartProduct'
 
 export const CartProduct = ({ product, tamaño, cantidad }) => {
-  const { name, price, images } = product
+  const {
+    handleDecrement,
+    handleIncrement,
+    name,
+    images,
+    price,
+    isDecrementing,
+    isIncrementing,
+  } = useCartProduct(product, tamaño, cantidad)
 
   return (
     <CartProductContainer>
@@ -28,11 +29,11 @@ export const CartProduct = ({ product, tamaño, cantidad }) => {
       </ProductInfo>
 
       <QuantityManager>
-        <button onClick={handleDecrement} disabled={true}>
+        <button onClick={handleDecrement} disabled={isDecrementing}>
           -
         </button>
         <span>{cantidad}</span>
-        <button onClick={handleIncrement} disabled={false}>
+        <button onClick={handleIncrement} disabled={isIncrementing}>
           +
         </button>
       </QuantityManager>

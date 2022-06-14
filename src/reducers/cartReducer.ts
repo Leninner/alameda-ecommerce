@@ -9,18 +9,17 @@ export const cartReducer = (state = initialState, action) => {
 
   switch (type) {
     case 'ADD_TO_CART':
-      console.log('ADD_TO_CART', payload)
-      console.log({ cart: state.cart })
-
       if (isAlreadyInCart(state.cart, payload.product)) {
         return {
           ...state,
+
           cart: state.cart.map((product: productInterface) => {
             if (product.id === payload.product.id) {
               return {
                 ...product,
                 tallas: {
                   ...product.tallas,
+
                   [payload.size]: {
                     ...product.tallas[payload.size],
                     cantidad:
@@ -48,6 +47,28 @@ export const cartReducer = (state = initialState, action) => {
       return {
         ...state,
       }
+
+    case 'UPDATE_CART':
+      const { product, quantity, size } = payload
+      const newCart: productInterface[] = [...state.cart]
+      const productIndex = newCart.findIndex(p => p.id === product.id)
+
+      /**
+       * Si la cantidad es negativa, entonces el stock se decrementa
+       * y la cantidad se incrementa
+       *
+       * Si la cantidad es positiva, entonces el stock se incrementa
+       * y la cantidad se decrementa
+       */
+
+      newCart[productIndex].tallas[size].stock += quantity
+      newCart[productIndex].tallas[size].cantidad -= quantity
+
+      return {
+        ...state,
+        cart: newCart,
+      }
+
     default:
       return state
   }
