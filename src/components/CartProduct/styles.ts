@@ -11,6 +11,8 @@ export const CartProductContainer = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid hsla(0, 0%, 39%, 0.2);
+  flex-wrap: wrap;
+  position: relative;
 `
 
 export const ImageProduct = styled.img`
@@ -22,6 +24,11 @@ export const ImageProduct = styled.img`
   vertical-align: middle;
   width: 132px;
   height: 132px;
+
+  @media (max-width: 768px) {
+    width: 75px;
+    height: 75px;
+  }
 `
 
 export const ProductInfo = styled.div`
@@ -37,6 +44,12 @@ export const ProductInfo = styled.div`
 
   p {
     color: #b5b3b3;
+  }
+
+  @media (max-width: 768px) {
+    flex-basis: 20%;
+    font-size: 3.2vw;
+    margin-right: 11px;
   }
 `
 
@@ -108,5 +121,11 @@ export const DeleteButton = styled.div`
     ${controladores}
     position: relative;
     top: -10px;
+  }
+
+  @media (max-width: 768px) {
+    position: absolute;
+    top: 10px;
+    right: 0;
   }
 `

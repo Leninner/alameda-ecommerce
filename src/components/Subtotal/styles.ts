@@ -57,4 +57,8 @@ export const SubtotalContainer = styled.div`
     border-style: solid;
     line-height: normal;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `

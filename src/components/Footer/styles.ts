@@ -46,6 +46,7 @@ export const FooterContainer = styled.footer`
     height: auto;
     padding-top: 4vmax;
     padding-bottom: 4vmax;
+    text-align: center;
 
     span {
       margin: 0 1.5rem;
