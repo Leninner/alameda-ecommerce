@@ -1,6 +1,7 @@
-import { CartListContainer } from './styles'
+import { CartListContainer, SubtotalContainer } from './styles'
 import { CartProduct } from '../../components/CartProduct'
 import { productInterface } from '../../interfaces'
+import { Subtotal } from '../../components/Subtotal'
 
 export const CartList = ({ cart }) => {
   return (
@@ -19,6 +20,10 @@ export const CartList = ({ cart }) => {
           )
         })
       })}
+
+      <SubtotalContainer>
+        <Subtotal />
+      </SubtotalContainer>
     </CartListContainer>
   )
 }

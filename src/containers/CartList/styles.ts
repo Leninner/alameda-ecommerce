@@ -13,3 +13,10 @@ export const CartListContainer = styled.div`
   font-weight: 300;
   font-style: normal;
 `
+
+export const SubtotalContainer = styled.div`
+  font-size: calc((1 - 1) * 1.2vw + 1rem);
+  line-height: 1.5em;
+  box-sizing: border-box;
+  text-align: right;
+`
