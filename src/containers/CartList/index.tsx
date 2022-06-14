@@ -22,7 +22,7 @@ export const CartList = ({ cart }) => {
       })}
 
       <SubtotalContainer>
-        <Subtotal />
+        <Subtotal cart={cart} />
       </SubtotalContainer>
     </CartListContainer>
   )
