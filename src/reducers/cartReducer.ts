@@ -84,8 +84,15 @@ export const cartReducer = (state = initialState, action) => {
           Object.entries(p.tallas).every(([_, { cantidad }]) => cantidad === 0)
         )
       ) {
-        updatedCart.splice(productIndex2, 1)
+        const newUpdatedCart: productInterface[] = updatedCart.filter(
+          p => p.id !== currentProduct.id
+        )
         console.log('El producto se elimino del carrito')
+
+        return {
+          ...state,
+          cart: newUpdatedCart,
+        }
       }
 
       return {
