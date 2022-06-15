@@ -11,11 +11,12 @@ export const Content = styled.section`
 
 export const CheckoutContainer = styled.div`
   width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
 `
 
 export const CheckoutHeader = styled.header`
-  position: sticky;
-  top: 0;
   padding: 22px 0;
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
@@ -32,8 +33,6 @@ export const CheckoutHeader = styled.header`
 `
 
 export const CheckoutInfo = styled.div`
-  position: sticky;
-  top: 0;
   width: 100%;
   font-weight: 300;
   font-size: 12px;

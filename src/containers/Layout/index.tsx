@@ -10,15 +10,20 @@ import { Link } from 'react-router-dom'
 
 export const Layout = ({ children, isHeader }) => {
   return (
-    <div>
-      {!isHeader ? <Header /> : <CehckoutHeader />}
+    <div
+      style={{
+        width: '100%',
+        height: '100%',
+      }}
+    >
+      {!isHeader ? <Header /> : <CheckoutHeaderComponent />}
       <Content isHeader={isHeader}>{children}</Content>
       {!isHeader ? <Footer /> : null}
     </div>
   )
 }
 
-const CehckoutHeader = () => {
+const CheckoutHeaderComponent = () => {
   return (
     <CheckoutContainer>
       <div>
