@@ -7,6 +7,7 @@ import {
 import { CartList } from '../../containers/CartList'
 import { useSelector } from 'react-redux'
 import { StateInterface } from '../../interfaces'
+import { Link } from 'react-router-dom'
 
 export const Cart = () => {
   const { cart } = useSelector((state: StateInterface) => state.cart)
@@ -25,7 +26,9 @@ const DefaultCart = () => {
       <DefaultCartSubtitle>
         No tienes nada en tu carrito de compras.
       </DefaultCartSubtitle>
-      <DefaultButton>Seguir Comprando</DefaultButton>
+      <Link to="/">
+        <DefaultButton>Seguir Comprando</DefaultButton>
+      </Link>
     </>
   )
 }
