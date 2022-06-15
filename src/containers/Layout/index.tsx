@@ -12,7 +12,7 @@ export const Layout = ({ children, isHeader }) => {
   return (
     <div>
       {!isHeader ? <Header /> : <CehckoutHeader />}
-      <Content>{children}</Content>
+      <Content isHeader={isHeader}>{children}</Content>
       {!isHeader ? <Footer /> : null}
     </div>
   )
@@ -34,17 +34,19 @@ const CehckoutHeader = () => {
           </div>
         </CheckoutInfo>
 
-        <Link
-          to="/"
-          style={{
-            textDecoration: 'none',
-            color: '#000',
-          }}
-        >
-          <CheckoutHeader>
-            <h1>Alameda</h1>
-          </CheckoutHeader>
-        </Link>
+        <CheckoutHeader>
+          <h1>
+            <Link
+              to="/"
+              style={{
+                textDecoration: 'none',
+                color: '#000',
+              }}
+            >
+              Alameda
+            </Link>
+          </h1>
+        </CheckoutHeader>
       </div>
     </CheckoutContainer>
   )

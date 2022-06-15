@@ -3,6 +3,10 @@ import styled from 'styled-components'
 export const Content = styled.section`
   width: 100%;
   padding: 0 4vw;
+
+  ${({ isHeader }) =>
+    isHeader &&
+    `background-color: #f6f6f6; display: flex; justify-content: center;`}
 `
 
 export const CheckoutContainer = styled.div`
@@ -10,8 +14,9 @@ export const CheckoutContainer = styled.div`
 `
 
 export const CheckoutHeader = styled.header`
-  position: relative;
-  padding: 33px 0;
+  position: sticky;
+  top: 0;
+  padding: 22px 0;
   border-top: 1px solid #e6e6e6;
   border-bottom: 1px solid #e6e6e6;
   display: flex;
@@ -27,12 +32,11 @@ export const CheckoutHeader = styled.header`
 `
 
 export const CheckoutInfo = styled.div`
+  position: sticky;
+  top: 0;
   width: 100%;
-  max-height: 100px;
-  -webkit-text-size-adjust: 100%;
   font-weight: 300;
   font-size: 12px;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
