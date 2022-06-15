@@ -83,6 +83,15 @@ export const useCartProduct = (
         size: tamaño,
       },
     })
+
+    dispatch({
+      type: 'UPDATE_STOCK',
+      payload: {
+        product,
+        size: tamaño,
+        quantity: -cantidad,
+      },
+    })
   }
 
   return {
