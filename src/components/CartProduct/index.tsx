@@ -12,6 +12,7 @@ export const CartProduct = ({ product, tamaño, cantidad }) => {
   const {
     handleDecrement,
     handleIncrement,
+    removeFromCart,
     name,
     images,
     price,
@@ -44,6 +45,7 @@ export const CartProduct = ({ product, tamaño, cantidad }) => {
         <img
           src="https://img.icons8.com/material-outlined/24/000000/delete.png"
           alt="delete"
+          onClick={removeFromCart}
         />
       </DeleteButton>
     </CartProductContainer>

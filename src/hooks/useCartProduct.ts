@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { productInterface } from '../interfaces'
+import { productInterface, StateInterface } from '../interfaces'
 
 export const useCartProduct = (
   product: productInterface,
   tamaño: string,
   cantidad: number
 ) => {
-  const state = useSelector(state => state)
+  const state = useSelector((state: StateInterface) => state)
   const dispatch = useDispatch()
   const { name, price, images, tallas } = product
 
@@ -73,8 +73,16 @@ export const useCartProduct = (
         },
       })
     }
+  }
 
-    // TODO: Poner el botón en disabled
+  const removeFromCart = () => {
+    dispatch({
+      type: 'REMOVE_FROM_CART',
+      payload: {
+        product,
+        size: tamaño,
+      },
+    })
   }
 
   return {
@@ -82,6 +90,7 @@ export const useCartProduct = (
     isDecrementing,
     handleIncrement,
     handleDecrement,
+    removeFromCart,
     name,
     price,
     images,

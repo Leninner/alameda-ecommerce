@@ -43,11 +43,6 @@ export const cartReducer = (state = initialState, action) => {
         cart: [...state.cart, payload.product],
       }
 
-    case 'REMOVE_FROM_CART':
-      return {
-        ...state,
-      }
-
     case 'UPDATE_CART':
       const { product, quantity, size } = payload
       const newCart: productInterface[] = [...state.cart]
@@ -67,6 +62,35 @@ export const cartReducer = (state = initialState, action) => {
       return {
         ...state,
         cart: newCart,
+      }
+
+    case 'REMOVE_FROM_CART':
+      const { product: currentProduct, size: currentSize } = payload
+      const updatedCart: productInterface[] = JSON.parse(
+        JSON.stringify(state.cart)
+      )
+
+      const productIndex2 = updatedCart.findIndex(
+        p => p.id === currentProduct.id
+      )
+
+      updatedCart[productIndex2].tallas[currentSize].stock +=
+        updatedCart[productIndex2].tallas[currentSize].cantidad
+
+      updatedCart[productIndex2].tallas[currentSize].cantidad = 0
+
+      if (
+        updatedCart.every(p =>
+          Object.entries(p.tallas).every(([_, { cantidad }]) => cantidad === 0)
+        )
+      ) {
+        updatedCart.splice(productIndex2, 1)
+        console.log('El producto se elimino del carrito')
+      }
+
+      return {
+        ...state,
+        cart: updatedCart,
       }
 
     default:
