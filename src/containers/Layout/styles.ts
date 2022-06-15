@@ -4,3 +4,41 @@ export const Content = styled.section`
   width: 100%;
   padding: 0 4vw;
 `
+
+export const CheckoutContainer = styled.div`
+  width: 100%;
+`
+
+export const CheckoutHeader = styled.header`
+  position: relative;
+  padding: 33px 0;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 22px;
+    max-width: 870px;
+    width: 100%;
+  }
+`
+
+export const CheckoutInfo = styled.div`
+  width: 100%;
+  max-height: 100px;
+  -webkit-text-size-adjust: 100%;
+  font-weight: 300;
+  font-size: 12px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+
+  span {
+    margin: 0 5px;
+  }
+`
