@@ -32,7 +32,13 @@ const CheckoutHeaderComponent = () => {
             <span>El área de pago está cerrada</span>
             <span>Esta tienda no está configurada para procesar pagos. </span>
             <span>
-              <a href="" target="_blank">
+              <a
+                href="https://support.squarespace.com/hc/en-us/articles/235161188"
+                target="_blank"
+                style={{
+                  color: '#00A0FF',
+                }}
+              >
                 Haz clic aquí para obtener más información.
               </a>
             </span>
