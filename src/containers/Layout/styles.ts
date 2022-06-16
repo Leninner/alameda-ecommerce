@@ -14,6 +14,7 @@ export const CheckoutContainer = styled.div`
   position: sticky;
   top: 0;
   background-color: #fff;
+  z-index: 10000;
 `
 
 export const CheckoutHeader = styled.header`

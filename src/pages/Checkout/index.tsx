@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { useEffect } from 'react'
+import { PurchaseSummary } from '../../containers/PurchaseSummary'
 
 export const Checkout = ({ handleHeader }) => {
   useEffect(() => {
@@ -13,19 +14,14 @@ export const Checkout = ({ handleHeader }) => {
 
   return (
     <CheckoutContainer>
-      <div id="prueba">
+      <section id="prueba">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
         quibusdam necessitatibus repellendus, aspernatur adipisci voluptates
         maxime dicta. A in labore exercitationem voluptatibus dolor dolore
         perspiciatis sit, voluptatum modi, repellat sapiente?
-      </div>
+      </section>
 
-      <div id="sticky">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam dolor
-        voluptate nulla expedita quisquam enim. Optio placeat ex voluptas, quo
-        obcaecati velit, commodi necessitatibus illo impedit inventore numquam.
-        Assumenda, modi!
-      </div>
+      <PurchaseSummary />
     </CheckoutContainer>
   )
 }
@@ -37,18 +33,14 @@ const CheckoutContainer = styled.div`
   justify-content: space-between;
   margin-top: 50px;
 
-  div {
-    background-color: red;
+  section {
     width: 418px;
-  }
-
-  #sticky {
-    position: sticky;
-    top: 176px;
-    height: 200px;
+    padding: 22px 22px 0 22px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
   }
 
   #prueba {
-    height: 200vh;
+    height: 1000px;
   }
 `
