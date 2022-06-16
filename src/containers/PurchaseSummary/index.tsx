@@ -1,5 +1,6 @@
 import { PurchaseSummaryContainer } from './styles'
 import { CheckoutProduct } from '../../components/CheckoutProduct'
+import { PaymentSummary } from '../../components/PaymentSummary'
 
 export const PurchaseSummary = () => {
   return (
@@ -10,6 +11,8 @@ export const PurchaseSummary = () => {
       <CheckoutProduct />
       <CheckoutProduct />
       <CheckoutProduct />
+
+      <PaymentSummary />
 
       <FooterSummary />
     </PurchaseSummaryContainer>
