@@ -7,6 +7,9 @@ export const PurchaseSummaryContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 22px 22px 0 22px;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
 
   h2 {
     -webkit-text-size-adjust: 100%;
