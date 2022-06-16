@@ -1,4 +1,5 @@
 import { cloneElement, Children } from 'react'
+import { useFormHook } from '../../hooks/useFormHook'
 
 export const FormCheckout = ({
   Container,
@@ -6,15 +7,19 @@ export const FormCheckout = ({
   InputComponent,
   ButtonComponent,
 }) => {
+  const { register, errors, handleSubmit, onSubmit } = useFormHook()
+
   return (
-    <section>
+    <form onSubmit={handleSubmit(onSubmit)}>
       {Children.map(children, child =>
         cloneElement(child, {
           WrapperComponent: Container,
           InputComponent,
           ButtonComponent,
+          register,
+          errors,
         })
       )}
-    </section>
+    </form>
   )
 }

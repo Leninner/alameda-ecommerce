@@ -9,6 +9,7 @@ export const useFormHook = (): any => {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm<Inputs>({
     resolver: yupResolver(schema),
   })

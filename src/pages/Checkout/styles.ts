@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const CheckoutContainer = styled.div`
+export const CheckoutContainer = styled.section`
   max-width: 870px;
   width: 100%;
   display: flex;
@@ -11,8 +11,8 @@ export const CheckoutContainer = styled.div`
     width: 418px;
   }
 
-  #prueba {
-    height: 1000px;
+  form {
+    width: 418px;
   }
 `
 
