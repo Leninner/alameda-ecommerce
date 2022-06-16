@@ -2,7 +2,12 @@ import { useEffect } from 'react'
 import { PurchaseSummary } from '../../containers/PurchaseSummary'
 import { FormCheckout } from '../../containers/FormCheckout'
 import { EmailUser } from '../../components/EmailUser'
-import { CheckoutContainer, Container } from './styles'
+import {
+  CheckoutContainer,
+  Container,
+  InputComponent,
+  ButtonComponent,
+} from './styles'
 
 export const Checkout = ({ handleHeader }) => {
   useEffect(() => {
@@ -16,8 +21,11 @@ export const Checkout = ({ handleHeader }) => {
 
   return (
     <CheckoutContainer>
-      <FormCheckout Container={Container}>
-        <EmailUser />
+      <FormCheckout
+        Container={Container}
+        InputComponent={InputComponent}
+        ButtonComponent={ButtonComponent}
+      >
         <EmailUser />
       </FormCheckout>
 
