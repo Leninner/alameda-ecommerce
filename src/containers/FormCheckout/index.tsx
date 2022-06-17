@@ -1,4 +1,4 @@
-import { cloneElement, Children } from 'react'
+import { cloneElement, Children, useState } from 'react'
 import { useFormHook } from '../../hooks/useFormHook'
 import { schemaCheckoutInfo } from '../../helpers'
 
@@ -6,6 +6,9 @@ export const FormCheckout = ({ Container, children, InputComponent, ButtonCompon
   const { register, errors, handleSubmit, onSubmit, setValue, getValues, trigger } =
     useFormHook(schemaCheckoutInfo)
 
+  const [isOpen, setIsOpen] = useState(true)
+
+  // Uso de composición de componentes
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {Children.map(children, child =>
@@ -18,6 +21,8 @@ export const FormCheckout = ({ Container, children, InputComponent, ButtonCompon
           setValue,
           getValues,
           trigger,
+          isOpen,
+          setIsOpen,
         })
       )}
     </form>

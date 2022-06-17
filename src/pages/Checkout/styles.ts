@@ -52,11 +52,13 @@ export const InputComponent = styled.input`
   position: relative;
   width: 100%;
   appearance: none;
+  margin-bottom: 11px;
 
   ${({ error }) => error && `border: 1px solid #ff0000;`}
 
   &:disabled {
     border: 1px solid transparent;
+    margin-bottom: -20px;
   }
 `
 

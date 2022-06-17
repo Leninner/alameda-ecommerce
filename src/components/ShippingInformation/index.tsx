@@ -1,3 +1,5 @@
+import styled from 'styled-components'
+
 export const ShippingInformation = (props: any) => {
   const {
     WrapperComponent,
@@ -8,6 +10,7 @@ export const ShippingInformation = (props: any) => {
     setValue,
     getValues,
     trigger,
+    isOpen,
   } = props
 
   return (
@@ -16,12 +19,13 @@ export const ShippingInformation = (props: any) => {
 
       <div
         style={{
-          display: 'none',
+          display: isOpen ? 'none' : 'block',
         }}
       >
-        <div>
+        <InLine>
           <InputComponent
             type="text"
+            id="first"
             placeholder="Nombre"
             {...register('customerName', {
               required: true,
@@ -37,7 +41,7 @@ export const ShippingInformation = (props: any) => {
             })}
             error={errors.customerLastName?.message}
           />
-        </div>
+        </InLine>
 
         <InputComponent
           type="text"
@@ -68,9 +72,10 @@ export const ShippingInformation = (props: any) => {
           <option value="Cuenca">Cuenca</option>
         </InputComponent>
 
-        <div>
+        <InLine>
           <InputComponent
             type="text"
+            id="first"
             placeholder="Código postal"
             {...register('customerPostalCode', {
               required: true,
@@ -86,7 +91,7 @@ export const ShippingInformation = (props: any) => {
             })}
             error={errors.customerCity?.message}
           />
-        </div>
+        </InLine>
 
         <InputComponent
           type="tel"
@@ -102,3 +107,11 @@ export const ShippingInformation = (props: any) => {
     </WrapperComponent>
   )
 }
+
+const InLine = styled.div`
+  display: flex;
+
+  #first {
+    margin-right: 10px;
+  }
+`

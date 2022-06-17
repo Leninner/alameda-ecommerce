@@ -11,8 +11,9 @@ export const EmailUserField = (props: any) => {
     setValue,
     getValues,
     trigger,
+    isOpen,
+    setIsOpen,
   } = props
-  const [isOpen, setIsOpen] = useState(true)
 
   const handleSetCustomerEmail = (email: string) => {
     setValue('customerEmail', email)

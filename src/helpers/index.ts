@@ -11,6 +11,14 @@ export const schemaContactInfo = yup.object().shape({
 
 export const schemaCheckoutInfo = yup.object().shape({
   customerEmail: yup.string().email('El email no es válido').required('El email es requerido'),
+  customerName: yup.string().required('El nombre es requerido'),
+  customerLastName: yup.string().required('El apellido es requerido'),
+  customerCountry: yup.string().required('El país es requerido'),
+  customerCity: yup.string().required('La ciudad es requerida'),
+  customerDirectionOne: yup.string().required('La dirección es requerida'),
+  customerDirectionTwo: yup.string(),
+  customerPhone: yup.number().required('El teléfono es requerido'),
+  customerPostalCode: yup.number().required('El código postal es requerido'),
 })
 
 export const getTotalAmount = (
