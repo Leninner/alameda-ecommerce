@@ -1,7 +1,7 @@
 import { Error, Span, SpanExtended } from './styles'
 import { useState } from 'react'
 
-export const EmailUser = (props: any) => {
+export const EmailUserField = (props: any) => {
   const {
     WrapperComponent,
     InputComponent,
@@ -23,9 +23,7 @@ export const EmailUser = (props: any) => {
     <WrapperComponent>
       <h2>1. Tu correo electrónico</h2>
 
-      {!isOpen && (
-        <SpanExtended onClick={() => setIsOpen(true)}>Editar</SpanExtended>
-      )}
+      {!isOpen && <SpanExtended onClick={() => setIsOpen(true)}>Editar</SpanExtended>}
 
       <InputComponent
         type="text"
@@ -38,15 +36,11 @@ export const EmailUser = (props: any) => {
       />
 
       {!errors.customerEmail?.message && isOpen && (
-        <Span>
-          Recibirás recibos y notificaciones en esta dirección de correo.
-        </Span>
+        <Span>Recibirás recibos y notificaciones en esta dirección de correo.</Span>
       )}
 
       {errors.customerEmail?.message && (
-        <Error>
-          Escribe una dirección de correo electrónico que sea válida
-        </Error>
+        <Error>Escribe una dirección de correo electrónico que sea válida</Error>
       )}
 
       {isOpen && (

@@ -46,9 +46,7 @@ export const Header = () => {
         </NavigationOptions>
       ) : (
         <>
-          <Box>
-            {!isOpen && <HiOutlineMenuAlt4 size={35} onClick={handleOpen} />}
-          </Box>
+          <Box>{!isOpen && <HiOutlineMenuAlt4 size={35} onClick={handleOpen} />}</Box>
 
           {isOpen ? <MenuMobile handleOpen={handleOpen} /> : null}
         </>

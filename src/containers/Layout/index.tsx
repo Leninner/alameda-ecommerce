@@ -1,10 +1,5 @@
 import { Header } from '../../components/Header'
-import {
-  Content,
-  CheckoutContainer,
-  CheckoutHeader,
-  CheckoutInfo,
-} from './styles'
+import { Content, CheckoutContainer, CheckoutHeader, CheckoutInfo } from './styles'
 import { Footer } from '../../components/Footer'
 import { Link } from 'react-router-dom'
 
@@ -17,7 +12,9 @@ export const Layout = ({ children, isHeader }) => {
       }}
     >
       {!isHeader ? <Header /> : <CheckoutHeaderComponent />}
+
       <Content isHeader={isHeader}>{children}</Content>
+
       {!isHeader ? <Footer /> : null}
     </div>
   )

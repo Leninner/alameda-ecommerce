@@ -4,11 +4,7 @@ import { Campos, MainDescription, Formulario } from './styles'
 import { useProductDescription } from '../../hooks/useProductDescription'
 import { PopUpModal } from '../PopUpModal'
 
-export const ProductDescription = ({
-  product,
-  closeModal,
-  fullWidth,
-}: ProductInfoModalProps) => {
+export const ProductDescription = ({ product, closeModal, fullWidth }: ProductInfoModalProps) => {
   const { id, name, price, description, details, tallas } = product
   const {
     quantity,
@@ -68,10 +64,7 @@ export const ProductDescription = ({
         <button type="submit">Añadir al Carrito</button>
 
         {!fullWidth && (
-          <Link
-            to={`/shop/id=${id}/${name?.split(' ')[0]}`}
-            onClick={closeModal}
-          >
+          <Link to={`/shop/id=${id}/${name?.split(' ')[0]}`} onClick={closeModal}>
             Ver elemento completo
           </Link>
         )}

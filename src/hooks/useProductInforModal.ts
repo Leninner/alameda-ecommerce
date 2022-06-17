@@ -1,10 +1,7 @@
 import { useState, useEffect } from 'react'
 import { StateInterface } from '../interfaces'
 
-export const useProductInfoModal = (
-  currentProductIndex: number,
-  state: StateInterface
-) => {
+export const useProductInfoModal = (currentProductIndex: number, state: StateInterface) => {
   const [currentIndex, setCurrentIndex] = useState(currentProductIndex)
   const [currentProduct, setCurrentProduct] = useState(
     state.shopList.filteredProducts[currentIndex]

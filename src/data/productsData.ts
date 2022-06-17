@@ -11,11 +11,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -40,11 +36,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -69,11 +61,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -98,11 +86,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -127,11 +111,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -156,11 +136,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -185,11 +161,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -214,11 +186,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -243,11 +211,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -272,11 +236,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -301,11 +261,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -329,11 +285,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -358,11 +310,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -387,11 +335,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,
@@ -416,11 +360,7 @@ export default [
     price: 50,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    details: [
-      '100 % algodón',
-      'Lavar en lavadora en frío',
-      'Secar en secadora a baja temperatura',
-    ],
+    details: ['100 % algodón', 'Lavar en lavadora en frío', 'Secar en secadora a baja temperatura'],
     tallas: {
       S: {
         stock: 10,

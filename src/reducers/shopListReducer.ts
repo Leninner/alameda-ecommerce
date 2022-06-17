@@ -13,8 +13,7 @@ export const shopListReducer = (state = initialState, action) => {
         all: () => products,
         offer: () => products.filter(product => product.isInOffer),
         pants: () => products.filter(product => product.category === 'pants'),
-        topCloths: () =>
-          products.filter(product => product.category === 'topCloths'),
+        topCloths: () => products.filter(product => product.category === 'topCloths'),
       }
 
       return {

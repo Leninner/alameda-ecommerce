@@ -66,13 +66,9 @@ export const cartReducer = (state = initialState, action) => {
 
     case 'REMOVE_FROM_CART':
       const { product: currentProduct, size: currentSize } = payload
-      const updatedCart: productInterface[] = JSON.parse(
-        JSON.stringify(state.cart)
-      )
+      const updatedCart: productInterface[] = JSON.parse(JSON.stringify(state.cart))
 
-      const productIndex2 = updatedCart.findIndex(
-        p => p.id === currentProduct.id
-      )
+      const productIndex2 = updatedCart.findIndex(p => p.id === currentProduct.id)
 
       updatedCart[productIndex2].tallas[currentSize].stock +=
         updatedCart[productIndex2].tallas[currentSize].cantidad

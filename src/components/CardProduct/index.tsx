@@ -1,27 +1,13 @@
-import {
-  CardProductContainer,
-  CardProductImgContainer,
-  CardProductInfo,
-} from './styles'
+import { CardProductContainer, CardProductImgContainer, CardProductInfo } from './styles'
 import { motion } from 'framer-motion'
 import { ProductInfoModal } from '../../containers/ProductInfoModal'
 import { useCardProduct } from '../../hooks/useCardProduct'
 import { CardProductProps } from '../../interfaces'
 import { Link } from 'react-router-dom'
 
-export const CardProduct = ({
-  product,
-  currentProductIndex,
-  isMaybe,
-}: CardProductProps) => {
-  const {
-    isOpen,
-    isHover,
-    handleMouseEnter,
-    handleMouseLeave,
-    handleOpen,
-    setIsOpen,
-  } = useCardProduct()
+export const CardProduct = ({ product, currentProductIndex, isMaybe }: CardProductProps) => {
+  const { isOpen, isHover, handleMouseEnter, handleMouseLeave, handleOpen, setIsOpen } =
+    useCardProduct()
 
   const { name, images, id } = product
 
@@ -84,10 +70,7 @@ export const CardProduct = ({
           }}
           viewport={{ once: true }}
         >
-          <CardProductImgContainer
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
+          <CardProductImgContainer onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             {!isHover ? (
               <img src={images[0]} alt={name} />
             ) : (
@@ -117,10 +100,7 @@ export const CardProduct = ({
           </CardProductImgContainer>
 
           {isOpen && (
-            <ProductInfoModal
-              setIsOpen={setIsOpen}
-              currentProductIndex={currentProductIndex}
-            />
+            <ProductInfoModal setIsOpen={setIsOpen} currentProductIndex={currentProductIndex} />
           )}
 
           <CardProductInfo>

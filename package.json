@@ -30,7 +30,7 @@
     "vite": "^2.9.2"
   },
   "prettier": {
-    "printWidth": 80,
+    "printWidth": 100,
     "tabWidth": 2,
     "useTabs": false,
     "semi": false,

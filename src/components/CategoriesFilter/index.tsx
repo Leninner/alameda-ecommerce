@@ -26,9 +26,7 @@ export const CategoriesFilter = () => {
 
         <span>|</span>
 
-        <li onClick={() => searchByCategory('topCloths')}>
-          Prendas superiores
-        </li>
+        <li onClick={() => searchByCategory('topCloths')}>Prendas superiores</li>
       </CategoriesList>
     </CategoriesFilterContainer>
   )

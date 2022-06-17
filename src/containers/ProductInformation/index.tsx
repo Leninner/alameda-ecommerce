@@ -9,9 +9,7 @@ export const ProductInformation = ({ id }) => {
     shopList: { filteredProducts },
   } = useSelector((state: StateInterface) => state)
 
-  const currentProduct = filteredProducts.find(
-    product => product.id === Number(id)
-  )
+  const currentProduct = filteredProducts.find(product => product.id === Number(id))
 
   return (
     <div>

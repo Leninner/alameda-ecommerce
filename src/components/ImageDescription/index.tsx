@@ -13,16 +13,8 @@ export const ImageDescription = ({ imageOne, imageTwo }) => {
     <ImageDescriptionContainer>
       {window.innerWidth > 768 && (
         <PreviewImages>
-          <img
-            src={imageOne}
-            alt="images"
-            onClick={() => setCurrentImage(imageOne)}
-          />
-          <img
-            src={imageTwo}
-            alt="images"
-            onClick={() => setCurrentImage(imageTwo)}
-          />
+          <img src={imageOne} alt="images" onClick={() => setCurrentImage(imageOne)} />
+          <img src={imageTwo} alt="images" onClick={() => setCurrentImage(imageTwo)} />
         </PreviewImages>
       )}
 

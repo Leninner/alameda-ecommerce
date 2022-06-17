@@ -1,9 +1,4 @@
-import {
-  CheckoutProductContainer,
-  CantidadContainer,
-  PriceSummary,
-  ProductData,
-} from './styles'
+import { CheckoutProductContainer, CantidadContainer, PriceSummary, ProductData } from './styles'
 import { useState } from 'react'
 
 export const CheckoutProduct = () => {
@@ -32,12 +27,7 @@ export const CheckoutProduct = () => {
 
         <CantidadContainer>
           <label htmlFor="cantidad">Cant.</label>
-          <input
-            type="number"
-            onChange={handleCantidad}
-            value={cantidad}
-            id="cantidad"
-          />
+          <input type="number" onChange={handleCantidad} value={cantidad} id="cantidad" />
         </CantidadContainer>
 
         <button>Eliminar</button>

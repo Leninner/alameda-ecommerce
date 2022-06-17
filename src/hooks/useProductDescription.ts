@@ -14,12 +14,7 @@ export const useProductDescription = () => {
   const handleSizeChange = (e: { target: { value: SetStateAction<string> } }) =>
     setSize(e.target.value)
 
-  const handleQuantityChange = (
-    e: any,
-    tallas: Tallas,
-    quantity: number,
-    size: string
-  ) => {
+  const handleQuantityChange = (e: any, tallas: Tallas, quantity: number, size: string) => {
     setQuantity(
       quantity < 0
         ? 0
@@ -31,11 +26,7 @@ export const useProductDescription = () => {
     )
   }
 
-  const sendToCart = (
-    product: productInterface,
-    quantity: number,
-    size: string
-  ) => {
+  const sendToCart = (product: productInterface, quantity: number, size: string) => {
     try {
       // Ojo a estos ifs
       if (product.tallas[size].stock < quantity) {
@@ -102,11 +93,7 @@ export const useProductDescription = () => {
   const getTotalProductsOnCart = (cart: any) => {
     return cart.reduce(
       (acc: any, item: any) =>
-        acc +
-        Object.entries(item.tallas).reduce(
-          (acc2, curr: any) => acc2 + curr[1].cantidad,
-          0
-        ),
+        acc + Object.entries(item.tallas).reduce((acc2, curr: any) => acc2 + curr[1].cantidad, 0),
       0
     )
   }

@@ -3,8 +3,7 @@ import { FormContainer, Label, Button } from './styles'
 import { schemaContactInfo } from '../../helpers'
 
 export const Form = () => {
-  const { register, handleSubmit, errors, onSubmit } =
-    useFormHook(schemaContactInfo)
+  const { register, handleSubmit, errors, onSubmit } = useFormHook(schemaContactInfo)
 
   return (
     <FormContainer onSubmit={handleSubmit(onSubmit)}>
@@ -33,9 +32,7 @@ export const Form = () => {
               name="lastName"
             />
             Apellido
-            {errors.lastName?.message && (
-              <span>{errors.lastName?.message}</span>
-            )}
+            {errors.lastName?.message && <span>{errors.lastName?.message}</span>}
           </Label>
         </section>
       </div>

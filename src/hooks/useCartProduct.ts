@@ -2,11 +2,7 @@ import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { productInterface, StateInterface } from '../interfaces'
 
-export const useCartProduct = (
-  product: productInterface,
-  tamaño: string,
-  cantidad: number
-) => {
+export const useCartProduct = (product: productInterface, tamaño: string, cantidad: number) => {
   const state = useSelector((state: StateInterface) => state)
   const dispatch = useDispatch()
   const { name, price, images, tallas } = product
