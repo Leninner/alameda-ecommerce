@@ -1,7 +1,7 @@
 import * as yup from 'yup'
 import { productInterface } from '../interfaces'
 
-export const schema = yup.object().shape({
+export const schemaContactInfo = yup.object().shape({
   name: yup.string().required('El nombre es requerido'),
   lastName: yup.string().required('El apellido es requerido'),
   email: yup
@@ -10,6 +10,13 @@ export const schema = yup.object().shape({
     .required('El email es requerido'),
   message: yup.string().required('El mensaje es requerido'),
   asunto: yup.string().required('El asunto es requerido'),
+})
+
+export const schemaCheckoutInfo = yup.object().shape({
+  customerEmail: yup
+    .string()
+    .email('El email no es válido')
+    .required('El email es requerido'),
 })
 
 export const getTotalAmount = (

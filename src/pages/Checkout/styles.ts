@@ -53,6 +53,8 @@ export const InputComponent = styled.input`
   width: 100%;
   appearance: none;
 
+  ${({ error }) => error && `border: 1px solid #ff0000;`}
+
   &:disabled {
     border: 1px solid transparent;
   }

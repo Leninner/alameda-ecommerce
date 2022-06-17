@@ -1,8 +1,10 @@
 import { useFormHook } from '../../hooks/useFormHook'
 import { FormContainer, Label, Button } from './styles'
+import { schemaContactInfo } from '../../helpers'
 
 export const Form = () => {
-  const { register, handleSubmit, errors, onSubmit } = useFormHook()
+  const { register, handleSubmit, errors, onSubmit } =
+    useFormHook(schemaContactInfo)
 
   return (
     <FormContainer onSubmit={handleSubmit(onSubmit)}>

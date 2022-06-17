@@ -1,5 +1,6 @@
 import { cloneElement, Children } from 'react'
 import { useFormHook } from '../../hooks/useFormHook'
+import { schemaCheckoutInfo } from '../../helpers'
 
 export const FormCheckout = ({
   Container,
@@ -7,7 +8,15 @@ export const FormCheckout = ({
   InputComponent,
   ButtonComponent,
 }) => {
-  const { register, errors, handleSubmit, onSubmit } = useFormHook()
+  const {
+    register,
+    errors,
+    handleSubmit,
+    onSubmit,
+    setValue,
+    getValues,
+    trigger,
+  } = useFormHook(schemaCheckoutInfo)
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -18,8 +27,13 @@ export const FormCheckout = ({
           ButtonComponent,
           register,
           errors,
+          setValue,
+          getValues,
+          trigger,
         })
       )}
+
+      <ButtonComponent type="submit">Ver estado de formulario</ButtonComponent>
     </form>
   )
 }

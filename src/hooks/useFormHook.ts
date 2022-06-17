@@ -1,15 +1,25 @@
-import { useForm } from 'react-hook-form'
+import { useForm, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { schema } from '../helpers'
 import { Inputs } from '../interfaces'
-import { SubmitHandler } from 'react-hook-form'
 
-export const useFormHook = (): any => {
+interface UseFormHookReturns {
+  register: any
+  handleSubmit: any
+  errors: any
+  onSubmit: (data: Inputs) => void
+  setValue: any
+  getValues: any
+  trigger: any
+}
+
+export const useFormHook = (schema: any): UseFormHookReturns => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
+    setValue,
+    getValues,
+    trigger,
   } = useForm<Inputs>({
     resolver: yupResolver(schema),
   })
@@ -20,6 +30,9 @@ export const useFormHook = (): any => {
     register,
     handleSubmit,
     errors,
+    setValue,
     onSubmit,
+    getValues,
+    trigger,
   }
 }

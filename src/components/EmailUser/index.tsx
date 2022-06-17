@@ -8,40 +8,65 @@ export const EmailUser = (props: any) => {
     ButtonComponent,
     register,
     errors,
+    setValue,
+    getValues,
+    trigger,
   } = props
-  const [email, setEmail] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
 
-  const handleClick = () => setEmail(!email)
+  const handleSetCustomerEmail = (email: string) => {
+    setValue('customerEmail', email)
+    setIsOpen(false)
+  }
 
   return (
     <WrapperComponent>
       <h2>1. Tu correo electrónico</h2>
 
-      {email && <SpanExtended onClick={handleClick}>Editar</SpanExtended>}
+      {!isOpen && (
+        <SpanExtended onClick={() => setIsOpen(true)}>Editar</SpanExtended>
+      )}
 
       <InputComponent
         type="text"
         placeholder="Correo electrónico"
-        disabled={errors.email ? true : false}
-        {...register('email', {
+        {...register('customerEmail', {
           required: true,
         })}
-        name="email"
+        error={errors.customerEmail?.message}
+        disabled={!isOpen}
       />
 
-      {!email && (
+      {!errors.customerEmail?.message && isOpen && (
         <Span>
           Recibirás recibos y notificaciones en esta dirección de correo.
         </Span>
       )}
 
-      {errors.email?.message && (
+      {errors.customerEmail?.message && (
         <Error>
           Escribe una dirección de correo electrónico que sea válida
         </Error>
       )}
 
-      {!email && <ButtonComponent>Continuar</ButtonComponent>}
+      {isOpen && (
+        <ButtonComponent
+          type="button"
+          onClick={async () => {
+            const result = await trigger('customerEmail')
+
+            if (result) {
+              handleSetCustomerEmail(getValues().customerEmail)
+            }
+          }}
+        >
+          Continuar
+        </ButtonComponent>
+      )}
     </WrapperComponent>
   )
 }
+
+/**
+ * La función trigger() es una función que Activa manualmente la validación de formularios o entradas. Este método también es útil cuando tiene una validación dependiente (la validación de entrada depende del valor de otra entrada).
+ */
