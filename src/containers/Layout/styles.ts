@@ -5,8 +5,11 @@ export const Content = styled.section`
   padding: 0 4vw;
 
   ${({ isHeader }) =>
-    isHeader &&
-    `background-color: #f6f6f6; display: flex; justify-content: center;`}
+    isHeader && `background-color: #f6f6f6; display: flex; justify-content: center; `}
+
+  @media (max-width: 768px) {
+    ${({ isHeader }) => isHeader && `padding: 0; background-color: #fff;`}
+  }
 `
 
 export const CheckoutContainer = styled.div`
@@ -31,6 +34,10 @@ export const CheckoutHeader = styled.header`
     max-width: 870px;
     width: 100%;
   }
+
+  @media (max-width: 768px) {
+    padding: 22px;
+  }
 `
 
 export const CheckoutInfo = styled.div`
@@ -44,5 +51,9 @@ export const CheckoutInfo = styled.div`
 
   span {
     margin: 0 5px;
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
   }
 `

@@ -14,14 +14,28 @@ export const CheckoutContainer = styled.section`
   form {
     width: 418px;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    section {
+      width: 100%;
+    }
+
+    form {
+      width: 100%;
+    }
+  }
 `
 
+const commonStyles = `padding: 22px;
+background-color: #fff;
+border: 1px solid #e6e6e6;
+margin-bottom: 22px;
+position: relative;`
+
 export const Container = styled.div`
-  padding: 22px;
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  margin-bottom: 22px;
-  position: relative;
+  ${commonStyles}
 
   h2 {
     -webkit-text-size-adjust: 100%;
@@ -31,6 +45,11 @@ export const Container = styled.div`
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 11px;
+  }
+
+  @media (max-width: 768px) {
+    border: none;
+    border-bottom: 1px solid #e6e6e6;
   }
 `
 

@@ -11,6 +11,11 @@ export const PurchaseSummaryContainer = styled.section`
   background-color: #fff;
   border: 1px solid #e6e6e6;
 
+  @media (max-width: 768px) {
+    border: none;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
   h2 {
     -webkit-text-size-adjust: 100%;
     font-family: Clarkson, Helvetica, sans-serif;

@@ -60,5 +60,9 @@ export const SubtotalContainer = styled.div`
 
   @media (max-width: 768px) {
     width: 100%;
+
+    button {
+      width: 100%;
+    }
   }
 `
