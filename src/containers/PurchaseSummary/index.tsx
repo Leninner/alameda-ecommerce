@@ -1,16 +1,23 @@
 import { PurchaseSummaryContainer } from './styles'
 import { CheckoutProduct } from '../../components/CheckoutProduct'
 import { PaymentSummary } from '../../components/PaymentSummary'
+import { useSelector } from 'react-redux'
+import { StateInterface, productInterface } from '../../interfaces'
 
 export const PurchaseSummary = () => {
+  const { cart } = useSelector((state: StateInterface) => state.cart)
+
+  console.log(cart)
+
   return (
     <PurchaseSummaryContainer id="sticky">
       <h2>Resumen del Pedido</h2>
 
-      <CheckoutProduct />
-      <CheckoutProduct />
-      <CheckoutProduct />
-      <CheckoutProduct />
+      {cart.map((product: productInterface) => {
+        return Object.entries(product.tallas).map(([key, { cantidad }]) => {
+          return cantidad > 0 && <CheckoutProduct key={`${product.id}-${key}`} />
+        })
+      })}
 
       <PaymentSummary />
 
