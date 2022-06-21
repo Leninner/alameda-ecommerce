@@ -1,36 +1,34 @@
 import { CheckoutProductContainer, CantidadContainer, PriceSummary, ProductData } from './styles'
-import { useState } from 'react'
+import { productInterface } from '../../interfaces'
+import { useCartProduct } from '../../hooks/useCartProduct'
 
-export const CheckoutProduct = () => {
-  const [cantidad, setCantidad] = useState(1)
+interface CheckoutProductProps {
+  product: productInterface
+  tamaño: string
+}
 
-  const handleCantidad = e => {
-    if (e.target.value >= 0 && e.target.value <= 99) {
-      setCantidad(e.target.value)
-    }
-  }
+export const CheckoutProduct = ({ product, tamaño }: CheckoutProductProps) => {
+  const { name, images, price, tallas } = product
+  const { removeFromCart } = useCartProduct(product, tamaño, tallas[tamaño].cantidad)
 
   return (
     <CheckoutProductContainer>
-      <img
-        src="https://images.squarespace-cdn.com/content/v1/5ed00bab777fab6698681c63/1590692797680-V0QFN4CTZKX0EYUOYE12/ulihu-charcoal-silk-linen-tunic_0326-v1-FINAL-copy.jpg?format=100w"
-        alt=""
-      />
+      <img src={images[0]} alt="" />
 
       <ProductData>
-        <h3>Túnica Lounge / Negra</h3>
-        <span>Tamaño: 0</span>
+        <h3>{name}</h3>
+        <span>Tamaño: {tamaño}</span>
       </ProductData>
 
       <PriceSummary>
-        <span>$50.00</span>
+        <span>${price}.00</span>
 
         <CantidadContainer>
           <label htmlFor="cantidad">Cant.</label>
-          <input type="number" onChange={handleCantidad} value={cantidad} id="cantidad" />
+          <input type="number" value={tallas[tamaño].cantidad} id="cantidad" />
         </CantidadContainer>
 
-        <button>Eliminar</button>
+        <button onClick={removeFromCart}>Eliminar</button>
       </PriceSummary>
     </CheckoutProductContainer>
   )

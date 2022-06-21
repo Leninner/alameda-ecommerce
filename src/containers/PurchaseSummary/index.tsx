@@ -15,7 +15,11 @@ export const PurchaseSummary = () => {
 
       {cart.map((product: productInterface) => {
         return Object.entries(product.tallas).map(([key, { cantidad }]) => {
-          return cantidad > 0 && <CheckoutProduct key={`${product.id}-${key}`} />
+          return (
+            cantidad > 0 && (
+              <CheckoutProduct key={`${product.id}-${key}`} product={product} tamaño={key} />
+            )
+          )
         })
       })}
 

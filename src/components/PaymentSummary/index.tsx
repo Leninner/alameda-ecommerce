@@ -1,11 +1,25 @@
 import { PaymentSummaryContainer, NoImportant } from './styles'
+import { useSelector } from 'react-redux'
+import { StateInterface } from '../../interfaces'
 
 export const PaymentSummary = () => {
+  const { cart } = useSelector((state: StateInterface) => state.cart)
+
+  const totalPayment = cart.reduce((acc, product) => {
+    return (
+      acc +
+      product.price *
+        Object.entries(product.tallas).reduce((acc2, [_, { cantidad }]) => {
+          return acc2 + cantidad
+        }, 0)
+    )
+  }, 0)
+
   return (
     <PaymentSummaryContainer>
       <NoImportant>
         <span>Subtotal</span>
-        <span>$150.00</span>
+        <span>${totalPayment}.00</span>
       </NoImportant>
 
       <NoImportant>
@@ -24,7 +38,7 @@ export const PaymentSummary = () => {
         }}
       >
         <span>Total</span>
-        <span>$150.00</span>
+        <span>${totalPayment}.00</span>
       </div>
     </PaymentSummaryContainer>
   )
