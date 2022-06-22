@@ -37,21 +37,18 @@ export const CheckoutProduct = ({ product, tamaño }: CheckoutProductProps) => {
 
   const handleChange = (e: React.FocusEvent<HTMLInputElement>) => {
     const { value } = e.target
-
-    if (cantidad > tallas[tamaño].stock) {
-      setCantidad(tallas[tamaño].stock)
-    } else if (cantidad < 0) {
-      setCantidad(0)
-    } else {
-      setCantidad(parseInt(value))
-    }
+    setCantidad(parseInt(value))
   }
 
   const handleBlur = () => {
-    if (cantidad) {
-      handleUpdateQuantity(cantidad - tallas[tamaño].cantidad)
-    } else {
+    if (cantidad < 1) {
       setCantidad(tallas[tamaño].cantidad)
+    } else if (cantidad > tallas[tamaño].stock + tallas[tamaño].cantidad) {
+      setCantidad(tallas[tamaño].cantidad)
+    } else if (!cantidad) {
+      setCantidad(tallas[tamaño].cantidad)
+    } else {
+      handleUpdateQuantity(cantidad - tallas[tamaño].cantidad)
     }
   }
 
