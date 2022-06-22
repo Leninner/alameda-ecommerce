@@ -48,7 +48,11 @@ export const CheckoutProduct = ({ product, tamaño }: CheckoutProductProps) => {
   }
 
   const handleBlur = () => {
-    handleUpdateQuantity(cantidad - tallas[tamaño].cantidad)
+    if (cantidad) {
+      handleUpdateQuantity(cantidad - tallas[tamaño].cantidad)
+    } else {
+      setCantidad(tallas[tamaño].cantidad)
+    }
   }
 
   return (
